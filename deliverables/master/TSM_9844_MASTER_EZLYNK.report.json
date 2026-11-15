@@ -1,7 +1,7 @@
 {
   "binary_sha256": "62a44d01926f59ae51aceb4a398690b46b07f10c2f2f2a606f8e8906d3eeae31",
-  "output_sha256": "cd2fb6b72557e6bdef19580a3cb1e7f196f6796d2fbfa926af58050477d61dfb",
-  "folders": 77,
+  "output_sha256": "2e95a0d080d4fbd676fc8b0b8e2fb7921a9e7be415f9316d7bf7449b281feab4",
+  "folders": 183,
   "maps": 1125,
   "map_types": {
     "X": 185,
@@ -15,6 +15,24 @@
   "discarded_unreferenced_manual_axes": 1,
   "duplicate_axis_vector_checks": 182,
   "inactive_rail_pump_copies": 5,
+  "navigation_definition_counts": {
+    "03 Main Injection Timing": 65,
+    "01 Pilot Injection": 123,
+    "02 Main Injection Quantity": 38,
+    "12 Post Injection": 10,
+    "13 Other Fuel Control": 41,
+    "06 Rail Pressure and Fuel Pump": 146,
+    "05 Boost": 47,
+    "04 Turbo Vane Position": 40,
+    "11 Exhaust Brake": 10,
+    "08 Torque Management and Smoke Limits": 155,
+    "07 Driver Demand": 50,
+    "09 Rev and Speed Limiters": 55,
+    "10 Idle and Engine Speed": 71,
+    "15 SOTF Controls": 1,
+    "14 Stationary PN Diagnostics": 3
+  },
+  "plain_named_per_tune_pilot_tables": 45,
   "sources": [
     {
       "path": "deliverables/ezlynk/9844/EZLYNK_L5P_9844_Performance_Maps.csv",
@@ -44,9 +62,10 @@
   "excluded": "9843 configs; obsolete swapped-axis configs; NOT_INCLUDED reports; WinOLS-format lists",
   "live_ezlynk_import_verified": false,
   "validation": {
-    "source_coverage_tests": 3,
+    "source_coverage_tests": 4,
     "source_coverage_tests_status": "PASS",
     "input_matrix_axis_checks": 489,
+    "numeric_and_axis_columns_unchanged_from_v1": true,
     "repo_validator_errors": 0,
     "repo_validator_out_of_range_or_nonfinite": 0,
     "repo_validator_address_overlaps": 0,

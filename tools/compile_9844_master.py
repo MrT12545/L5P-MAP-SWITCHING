@@ -24,6 +24,111 @@ INPUTS = [
 WIDTH = {'1': 1, '2': 2, '4': 4, 'F': 4}
 
 
+def visible_layout(rows, old_folders):
+    """Give each complete folder path its own IDs and plain operating groups."""
+    folder_names = {r[17]: r[2] for r in old_folders}
+    referenced = {token for r in rows if r[16] and r[5] in ('Z', 'Y')
+                  for token in r[16].split(':')}
+    roots = ['01 Pilot Injection', '02 Main Injection Quantity',
+             '03 Main Injection Timing', '04 Turbo Vane Position',
+             '05 Boost', '06 Rail Pressure and Fuel Pump',
+             '07 Driver Demand', '08 Torque Management and Smoke Limits',
+             '09 Rev and Speed Limiters', '10 Idle and Engine Speed',
+             '11 Exhaust Brake', '12 Post Injection', '13 Other Fuel Control',
+             '14 Stationary PN Diagnostics', '15 SOTF Controls', '90 Shared Axes']
+
+    def group(row, gm, path):
+        name = row[2]
+        original = path[0] if path else ''
+        if 'Stationary PN Diagnostics' in original or name.startswith('Stationary PN'):
+            return roots[13]
+        if 'Extension Enable' in name:
+            return roots[14]
+        if ('Injection - Pilot' in original or 'QntyR1' in gm or 'QntyR2' in gm
+                or 'DT_R1' in gm or 'DT_R2' in gm or re.search(r'\bPilot [12]', name)):
+            return roots[0]
+        if 'Main Timing' in original or 'SOI_M' in gm or 'Main Injection Timing' in name or 'Main Timing' in name:
+            return roots[2]
+        if ('Main Quantity' in original or 'TorqToFuel' in gm or 't_ET_InjTbl' in gm
+                or 'Main Pulse Width' in name):
+            return roots[1]
+        if 'VGT' in gm or 'Vane' in name or any('Vane Map Selection' in x for x in path):
+            return roots[3]
+        if 'BstSetPt' in gm or 'Boost and VGT' in original:
+            return roots[4]
+        if 'FHPC' in gm or 'Rail Pressure and Fuel Pump' in original:
+            return roots[5]
+        if 'DTRC' in gm or 'Driver Demand' in original or 'Park/Neutral Pedal' in name:
+            return roots[6]
+        if 'EATC' in gm or 'ECPC' in gm or 'Torque' in original or 'Smoke' in original:
+            return roots[7]
+        if 'Rev and Speed' in original:
+            return roots[8]
+        if 'Idle and Engine' in original:
+            return roots[9]
+        if 'Exhaust Brake' in original:
+            return roots[10]
+        if 'Post' in original:
+            return roots[11]
+        return roots[12]
+
+    classified = []
+    counts = collections.Counter()
+    pilot_names = 0
+    for original_row in rows:
+        row = original_row.copy()
+        path = [folder_names[x] for x in row[17:20] if x and x != '0']
+        gm_match = re.search(r'GM name:\s*(\S+)', row[3])
+        gm = gm_match.group(1) if gm_match else row[2]
+        tune = re.search(r'\bTune ([1-5])\b', row[2])
+        position = f'Tune {tune.group(1)}' if tune else 'Base and Shared'
+        root = group(row, gm, path)
+        old_name = row[2]
+        pilot = re.search(r'KtFULC_V_QntyR([12])(?:_Ptn([12]))?_(Lo|Mid|Sea)BC1', gm)
+        if pilot and tune:
+            layer = {'Lo': 'Low Baro', 'Mid': 'Mid Baro', 'Sea': 'Sea Level'}[pilot.group(3)]
+            pattern = f' - Pattern {pilot.group(2)}' if pilot.group(2) else ''
+            row[2] = f'Tune {tune.group(1)} - Pilot {pilot.group(1)} Quantity{pattern} - {layer}'
+            pilot_names += 1
+        elif gm.startswith('KtETQC_m_TorqToFuel_'):
+            layer_match = re.search(r'_(Lo|Mid|Sea)BC1', gm)
+            layer = {'Lo': 'Low Baro', 'Mid': 'Mid Baro', 'Sea': 'Sea Level'}.get(
+                layer_match.group(1) if layer_match else '', 'Other Mode or Correction')
+            prefix = f'Tune {tune.group(1)} - ' if tune else ''
+            if layer_match:
+                row[2] = prefix + 'Main Injection Quantity - Torque to Fuel - ' + layer
+            else:
+                row[2] = 'Main Injection Quantity - ' + old_name
+        if row[2] != old_name:
+            row[3] += ' | Previous label: ' + old_name
+        if row[0] in referenced and row[5] in ('X', 'Y'):
+            logical = (roots[15], re.sub(r'^\d+ ', '', root), 'Breakpoints')
+        else:
+            kind = {'Z': 'Tables', 'X': 'Curves', 'Y': 'Curves', 'N': 'Parameters', 'S': 'Switches'}[row[5]]
+            logical = (root, position, kind)
+            counts[root] += 1
+        classified.append((row, logical))
+    folders = []
+    identities = {}
+
+    def folder(path):
+        if path not in identities:
+            fid = f'F{len(identities) + 1}'
+            identities[path] = fid
+            folders.append(['FFFF', '0x0000', path[-1], '', '0', 'C'] + ['0'] * 11 + [fid, '0', '0', ''])
+        return identities[path]
+
+    # Root declaration order is explicit, so the four requested groups come first.
+    for root in roots:
+        if any(path[0] == root for _, path in classified):
+            folder((root,))
+    result = []
+    for row, path in classified:
+        row[17:20] = [folder(path[:i + 1]) for i in range(3)]
+        result.append(row)
+    return result, folders, dict(counts), pilot_names
+
+
 def parse(text):
     return [r for r in csv.reader(line for line in text.splitlines()
                                   if line and not line.startswith('#')) if any(r)]
@@ -166,6 +271,7 @@ def compile_master(binary):
         coverage[entry['source']] += 1
     if not all(re.fullmatch(r'C[0-9]+', r[0]) for r in output_maps):
         raise ValueError('Invalid master ID')
+    output_maps, folder_rows, navigation, pilot_names = visible_layout(output_maps, folder_rows)
     result = [header] + folder_rows + output_maps
     stream = io.StringIO(newline='')
     stream.write('# TSM 9844 MASTER - latest pilot and stationary PN diagnostic firmware definitions\r\n')
@@ -182,6 +288,8 @@ def compile_master(binary):
                   discarded_unreferenced_manual_axes=len(discarded_manual_axes),
                   duplicate_axis_vector_checks=duplicate_checks,
                   inactive_rail_pump_copies=len(pump_copies),
+                  navigation_definition_counts=navigation,
+                  plain_named_per_tune_pilot_tables=pilot_names,
                   sources=[dict(path=s['path'], sha256=s['sha256'], input_maps=len(s['maps']),
                                 new_canonical_items=coverage[i]) for i, s in enumerate(sources)],
                   excluded='9843 configs; obsolete swapped-axis configs; NOT_INCLUDED reports; WinOLS-format lists',

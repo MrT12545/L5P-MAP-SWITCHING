@@ -68,6 +68,23 @@ class MasterTests(unittest.TestCase):
         self.assertEqual(self.report['maps'], 1125)
         self.assertEqual(self.report['map_types']['Z'], 398)
 
+    def test_plain_core_groups_and_unique_folder_paths(self):
+        folders = {r[17]: r[2] for r in self.rows[1:] if r[5] == 'C'}
+        root_names = {folders[r[17]] for r in self.maps}
+        for name in ['01 Pilot Injection', '02 Main Injection Quantity',
+                     '03 Main Injection Timing', '04 Turbo Vane Position']:
+            self.assertIn(name, root_names)
+            self.assertTrue(any(r[5] == 'Z' and folders[r[17]] == name for r in self.maps))
+        contexts = {}
+        for row in self.maps:
+            for level in range(3):
+                fid = row[17 + level]
+                context = (level, tuple(row[17:17 + level]))
+                self.assertEqual(contexts.setdefault(fid, context), context)
+        pilots = [r for r in self.maps if re.match(r'Tune [1-5] - Pilot [12] Quantity', r[2])]
+        self.assertEqual(len(pilots), 45)
+        self.assertTrue(all(folders[r[17]] == '01 Pilot Injection' for r in pilots))
+
 
 if __name__ == '__main__':
     unittest.main()
