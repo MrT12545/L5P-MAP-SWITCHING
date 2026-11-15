@@ -19,8 +19,22 @@ The full conversation is in [`conversation/THREAD.md`](conversation/THREAD.md). 
 | `deliverables/sotf_switch_lists/` | Every map HP Tuners switches per steering-wheel position, with base and copy addresses. |
 | `deliverables/builds_11-10-26_V2/` | Modified 11-10-26 V2 files A, B and C, plus the paste sheet. |
 | `tools/` | The Python scripts used for the analysis. They expect the original scratchpad layout and are kept for reference. |
+| `uploads/` | The files you sent during the thread, byte-for-byte as uploaded (upload ID prefix removed from the names). |
 
-Your original uploads (stock, 9843, 9844 10-29, clean 11-10-26 V2, EZ profile, .hpt and .olsx) are not included.
+### Files in `uploads/`
+
+| File | What it is |
+|---|---|
+| `168852_E41_..._P1B.olsx` | Encrypted OLSx download; unreadable outside WinOLS. |
+| `E2015G5126112_P1B_E2015G5126111_P1B.zip` | WinOLS project with the stock P1B binary. |
+| `WinOLS_GMC_Sierra_3500_HD_..._P1B.csv` | Stock WinOLS map definitions (the source for all naming and placement). |
+| `JOSEPH_CLARK_SOTF_..._11_10_26_V2_.hpt` | HP Tuners file for 11-10-26 V2. |
+| `ECM-binary-file-..._9843_SOTF_...bin` | 9843 SOTF binary. |
+| `JOSEPH_CLARK_SOTF_..._10_29_26__exported.bin` | 9844 SOTF binary, 10-29 revision. |
+| `ECM-binary-file-..._11_10_26_V2__exported.bin` | Tuner's clean 9844 11-10-26 V2 binary; the base for builds A, B and C. |
+| `ECU-Profile-..._EZ_EDIT_V1_.zip` | The EZ LYNK profile that was flashed with the old config's edits. |
+| `EZLYNK_config_9844_PN_FreeRev_SOTF_Vanes.csv` | The old EZ LYNK config with swapped axes; don't use it. |
+| `Custom-ECU-configurations-guide.pdf` | EZ LYNK custom configuration guide. |
 
 ## The 11-10-26 V2 builds
 

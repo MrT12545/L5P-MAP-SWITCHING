@@ -1,2 +1,3 @@
 *.bin binary
 *.csv text eol=crlf -diff
+uploads/** -text -diff
