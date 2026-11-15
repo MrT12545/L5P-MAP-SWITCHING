@@ -8,6 +8,7 @@ import csv
 import io
 from pathlib import Path
 import random
+import re
 import struct
 import unittest
 
@@ -214,6 +215,8 @@ class PilotTests(unittest.TestCase):
         rows = list(csv.reader(line for line in content.splitlines() if not line.startswith('#')))
         self.assertTrue(all(len(row) == 21 for row in rows))
         maps = [r for r in rows[1:] if r[5] != 'C']
+        self.assertTrue(all(re.fullmatch(r'C[0-9]+', r[0]) for r in maps),
+                        'EZ LYNK Unique ID must be C followed by a number')
         self.assertEqual(len({r[0] for r in maps}), len(maps))
         by_id = {r[0]: r for r in maps}
         tables = [r for r in maps if r[5] == 'Z']

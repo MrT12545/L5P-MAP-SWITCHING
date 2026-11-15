@@ -16,5 +16,12 @@
       "No interrupt or timing validation",
       "Finite interpolation cases only; exceptional floating-point behavior untested"
     ]
+  },
+  "csv_import_fix": {
+    "cause": "EZ LYNK rejects D-prefixed unique IDs",
+    "fix": "C9000-C9003 axes; C9100-C9144 tables; C9200 control; axis references updated",
+    "numeric_C_ids": 50,
+    "addresses_units_scales_and_table_values_changed": false,
+    "actual_reimport_verified": false
   }
 }

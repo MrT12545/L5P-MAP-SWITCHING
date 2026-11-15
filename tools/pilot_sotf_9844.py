@@ -216,7 +216,8 @@ def config(full_config, manifest):
         r = ['FFFF', '0x0000', title, '', '0', 'C'] + ['0'] * 11 + [fid, '0', '0', '']
         output.append(r)
     axis_ids = sorted({a for r in source_maps.values() for a in r[16].split(':')})
-    renamed = {old: f'D{0x100 + i:03X}' for i, old in enumerate(axis_ids)}
+    # EZ LYNK requires C followed by a number, including axis/control IDs.
+    renamed = {old: f'C{9000 + i}' for i, old in enumerate(axis_ids)}
     for old in axis_ids:
         r = by_id[old].copy()
         r[0] = renamed[old]
@@ -227,7 +228,7 @@ def config(full_config, manifest):
         output.append(r)
     for i, record in enumerate(manifest['tables']):
         r = source_maps[record['name']].copy()
-        r[0] = f'D{0x200 + i:03X}'
+        r[0] = f'C{9100 + i}'
         r[1] = hex(record['file_offset'])
         r[2] = f"Tune {record['tune']} " + record['name']
         r[3] = ('Experimental firmware extension required. Only this BC1 contribution switches; '
@@ -236,7 +237,7 @@ def config(full_config, manifest):
         r[17:20] = ['F900', f"F90{record['tune']}", '']
         output.append(r)
     # Numeric 0/1 control; exact 1 enables, all other byte values select base maps.
-    output.append(['D300', hex(manifest['enable_file_offset']), 'Pilot SOTF Extension Enable',
+    output.append(['C9200', hex(manifest['enable_file_offset']), 'Pilot SOTF Extension Enable',
                    'BENCH DEVELOPMENT ONLY. 1 selects pilot copies when HPT state is ready and tune is 1-5; 0 uses base.',
                    '', 'N', '1', '1', 'MSB', 'U', '1', '0', '0', '0', '1', '1', '', 'F900', 'F907', '', ''])
     stream = io.StringIO(newline='')
