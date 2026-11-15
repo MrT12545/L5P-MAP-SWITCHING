@@ -1,0 +1,55 @@
+{
+  "binary_sha256": "62a44d01926f59ae51aceb4a398690b46b07f10c2f2f2a606f8e8906d3eeae31",
+  "output_sha256": "cd2fb6b72557e6bdef19580a3cb1e7f196f6796d2fbfa926af58050477d61dfb",
+  "folders": 77,
+  "maps": 1125,
+  "map_types": {
+    "X": 185,
+    "Y": 272,
+    "Z": 398,
+    "N": 250,
+    "S": 20
+  },
+  "input_maps": 1252,
+  "deduplicated_maps": 126,
+  "discarded_unreferenced_manual_axes": 1,
+  "duplicate_axis_vector_checks": 182,
+  "inactive_rail_pump_copies": 5,
+  "sources": [
+    {
+      "path": "deliverables/ezlynk/9844/EZLYNK_L5P_9844_Performance_Maps.csv",
+      "sha256": "5d243045d9103517a598dbe54d047691571c4dfeb6855248030b5c7a3359dbd8",
+      "input_maps": 1088,
+      "new_canonical_items": 1074
+    },
+    {
+      "path": "deliverables/ezlynk/9844/EZLYNK_config_9844_PN_FreeRev_SOTF_Vanes_FIXED_v3.csv",
+      "sha256": "ae15e3c66872f46d5abb794fd3d091887ccea44443e2d6b48e5f8d6e9b987606",
+      "input_maps": 59,
+      "new_canonical_items": 2
+    },
+    {
+      "path": "deliverables/pilot_sotf_9844/EZLYNK_9844_Pilot_SOTF_BENCH.csv",
+      "sha256": "60970411bfbbb4d74895a0e6b3d14de93d4ab6a902aeee12955e59c726479b17",
+      "input_maps": 50,
+      "new_canonical_items": 46
+    },
+    {
+      "path": "deliverables/stationary_pn_9844/EZLYNK_9844_Pilot_and_PN_DIAGNOSTIC.csv",
+      "sha256": "5cfacaa3d472579eded78652a77269e8e96cbef49e064b43426f24679394cccb",
+      "input_maps": 55,
+      "new_canonical_items": 3
+    }
+  ],
+  "excluded": "9843 configs; obsolete swapped-axis configs; NOT_INCLUDED reports; WinOLS-format lists",
+  "live_ezlynk_import_verified": false,
+  "validation": {
+    "source_coverage_tests": 3,
+    "source_coverage_tests_status": "PASS",
+    "input_matrix_axis_checks": 489,
+    "repo_validator_errors": 0,
+    "repo_validator_out_of_range_or_nonfinite": 0,
+    "repo_validator_address_overlaps": 0,
+    "actual_ezlynk_import_verified": false
+  }
+}
