@@ -1,7 +1,7 @@
-"""Build a checksum-UNFINISHED, bench-development pilot quantity SOTF candidate.
+"""Build a checksum-corrected, hardware-UNVERIFIED pilot quantity SOTF candidate.
 
 Only the exact clean 11-10-26 V2 export is accepted. No ECU communication.
-No flashing, signature changes, or checksum correction are implemented here.
+No flashing or signature changes. Export-declared sums/CRCs are corrected.
 """
 import argparse
 import csv
@@ -10,13 +10,14 @@ import io
 import json
 from pathlib import Path
 import struct
+from e41_export_integrity import Export
 
 SOURCE_SHA256 = 'e19408dd83316edc3deb463b5eae44414da0b1035a1819126f9d1efa5922a45d'
 LOOKUP = 0x31FD7C
 CODE_CPU = 0x466800
 DATA_CPU = 0x170000
 CAL_FILE_DELTA = 0x39FFE0
-WRAPPER_STRIDE = 0x100
+WRAPPER_STRIDE = 0x80
 TABLE_BYTES = 480
 # One existing Normal-mode BC1 call per table. Other pilot contributions stay shared.
 TABLES = [
@@ -126,11 +127,24 @@ def wrapper(cpu, copy_base):
 def build(source):
     if hashlib.sha256(source).hexdigest() != SOURCE_SHA256:
         raise ValueError('Source is not the exact clean 9844 11-10-26 V2 export')
+    export = Export(source)
+    source_integrity = export.audit()
+    if not all(r['sum_valid'] and r['crc_valid'] for r in source_integrity):
+        raise ValueError('Source integrity checks failed')
     result = bytearray(source)
     code_start = CODE_CPU - 0x200000
     code_end = code_start + len(TABLES) * WRAPPER_STRIDE
     data_start = DATA_CPU + CAL_FILE_DELTA
     data_end = data_start + 32 + len(TABLES) * 5 * TABLE_BYTES
+    # Confirm the fixed translation assumptions against the file's own descriptors.
+    if export.file_offset(CODE_CPU, code_end - code_start) != code_start:
+        raise ValueError('Program mapping disagrees with export descriptors')
+    if export.file_offset(DATA_CPU, data_end - data_start) != data_start:
+        raise ValueError('Calibration mapping disagrees with export descriptors')
+    # All shims stay in the same smallest Book E page size (4 KiB) as existing
+    # HPT instructions. This is static placement evidence, not live-MMU proof.
+    if CODE_CPU >> 12 != (CODE_CPU + len(TABLES) * WRAPPER_STRIDE - 1) >> 12:
+        raise ValueError('Wrapper reservation crosses 4 KiB boundary')
     if source[code_start:code_end] != b'\xFF' * (code_end - code_start):
         raise ValueError('Program reservation is not erased')
     if source[data_start:data_end] != b'\xFF' * (data_end - data_start):
@@ -161,14 +175,21 @@ def build(source):
                                 call_cpu=call, wrapper_cpu=address))
     if len(result) != len(source):
         raise ValueError('Candidate length changed')
-    manifest = dict(status='BENCH_DEVELOPMENT_CHECKSUM_UNFINISHED',
+    result = export.repair(result)
+    candidate_integrity = export.audit(result)
+    if not all(r['sum_valid'] and r['crc_valid'] for r in candidate_integrity):
+        raise ValueError('Candidate integrity checks failed')
+    manifest = dict(status='CHECKSUM_CORRECTED_HARDWARE_UNVERIFIED',
                     source_sha256=SOURCE_SHA256,
                     candidate_sha256=hashlib.sha256(result).hexdigest(),
                     changed_bytes=sum(a != b for a, b in zip(source, result)),
                     tables=records, enable_file_offset=data_start,
                     program_reservation=[code_start, code_end],
                     calibration_reservation=[data_start, data_end],
-                    limitations=['No checksum or signature validation/correction',
+                    integrity=candidate_integrity,
+                    integrity_file_offsets=[export.file_offset(cpu) for seg in export.segments
+                                            for cpu in (seg.checksum_cpu, seg.crc_cpu)],
+                    limitations=['Export sums and CRCs validated; no signature/authentication validation',
                                  'No hardware execution or timing validation',
                                  'Erased bytes alone do not prove usable mapped flash',
                                  'Only nine BC1 pilot quantity contributions switch; other contributions stay shared',
@@ -219,7 +240,7 @@ def config(full_config, manifest):
                    'BENCH DEVELOPMENT ONLY. 1 selects pilot copies when HPT state is ready and tune is 1-5; 0 uses base.',
                    '', 'N', '1', '1', 'MSB', 'U', '1', '0', '0', '0', '1', '1', '', 'F900', 'F907', '', ''])
     stream = io.StringIO(newline='')
-    stream.write('# BENCH DEVELOPMENT ONLY - firmware and checksum work required\r\n')
+    stream.write('# BENCH DEVELOPMENT ONLY - matching firmware required; hardware unverified\r\n')
     csv.writer(stream, lineterminator='\r\n').writerows(output)
     return stream.getvalue()
 
@@ -232,7 +253,7 @@ def main():
     source = args.source.read_bytes()
     candidate, manifest = build(source)
     args.out.mkdir(parents=True, exist_ok=True)
-    (args.out / '9844_PILOT_SOTF_BENCH_CHECKSUM_UNFINISHED.bin').write_bytes(candidate)
+    (args.out / '9844_PILOT_SOTF_BENCH_HARDWARE_UNVERIFIED.bin').write_bytes(candidate)
     (args.out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     root = Path(__file__).resolve().parents[1]
     full = root / 'deliverables/ezlynk/9844/EZLYNK_L5P_9844_Performance_Maps.csv'

@@ -4,8 +4,9 @@
 
 **Not flash-ready.** This adds a reproducible experimental firmware builder and
 an EZ LYNK definition file, not a verified ECU release. No hardware was connected.
-The generated binary is deliberately named `CHECKSUM_UNFINISHED` and is not
-committed. Do not mistake passing host tests for a successful ECU bench test.
+The generated binary is named `HARDWARE_UNVERIFIED` and is not committed.
+Program/calibration additive sums and CRCs are now corrected and checked.
+Do not mistake passing host tests for a successful ECU bench test.
 
 Supported input is only the tuner's clean 11-10-26 V2 export, SHA-256:
 
@@ -60,17 +61,43 @@ The nine call sites, base/copy addresses and file offsets are in
 
 | Region | CPU addresses | Export-file offsets |
 |---|---|---|
-| Nine shim slots | `0x466800–0x4670FF` | `0x266800–0x2670FF` |
+| Nine shim slots | `0x466800–0x466C7F` | `0x266800–0x266C7F` |
 | Control header and 45 tables | `0x170000–0x17547F` | `0x50FFE0–0x51545F` |
 
-Those ranges are all 0xFF in the exact source. **That does not establish physical
-flash availability, executable/calibration mapping, checksum coverage or flash
-tool support.** Their reservation remains provisional until those are verified.
+Those ranges are all 0xFF in the exact source and lie within the file's declared
+program/engine-calibration transfer blocks. The shims now fit in the same 4 KiB
+page (`0x466000–0x466FFF`) as the final existing HPT instructions, reducing the
+placement uncertainty. **This does not prove live MMU permissions, physical flash
+behavior or flash-tool support.**
 
 Instruction encodings were checked against the NXP/Freescale
 [VLE Programming Environments Manual](https://www.nxp.com/docs/en/reference-manual/VLEPEM.pdf)
-and the repo's existing VLE decoder. The test interpreter is intentionally a
-small host model, not a full e200/SPE emulator.
+and the repo's existing VLE decoder. An independent Ghidra SLEIGH decoder through
+`pypcode 4.1.0` also decodes the generated shims. Its `e_mull2i.` spelling notes a
+CR0 update that the small repo decoder does not show; the shim restores the full
+CR before continuing. Both host interpreters are models, not full ECU emulators.
+
+## Export layout and integrity
+
+`tools/e41_export_integrity.py` parses the range descriptors in the supplied
+export instead of assuming one flat CPU-address translation. The program has two
+transfer blocks: `0x200000–0x57FFCF` and `0x57FFF0–0x5FFFFF`. Five calibration
+segments follow. Their concatenated lengths equal the export's 5,898,192 bytes.
+The omitted 32-byte program gap matters for translating later CPU addresses;
+the pilot hook/shim locations are before that gap.
+
+The descriptors also give CRC and additive-sum coverage. For all six segments:
+
+- CRC is CRC-16/ARC, stored little-endian in the excluded CRC word.
+- The additive word is big-endian and makes the sum of covered 16-bit words,
+  including that checksum word, zero modulo 65536.
+- CRC excludes both integrity words; the additive sum includes the CRC word.
+  Repair therefore writes CRC first and additive sum second.
+
+All 36 stored integrity words (six segments times two words times three source
+binaries) reproduce exactly. Repair is byte-identical on each original file.
+The candidate passes all 12 checks after the program and engine-calibration
+edits. No authentication/signature mechanism was changed or validated.
 
 ## Reproduce locally
 
@@ -81,16 +108,34 @@ python -m unittest discover -s tools -p test_pilot_sotf_9844.py -v
 python tools/pilot_sotf_9844.py 'uploads/ECM-binary-file-G66E41AT1-Nelly_11-10-26_-JOSEPH_CLARK_SOTF_Will_Miller_edit__nelly_3_V3_11_10_26_V2__exported.bin' --out /tmp/pilot-sotf-bench
 ```
 
-Output includes an unfinished development binary, manifest and standalone
+Output includes a checksum-corrected development binary, manifest and standalone
 experimental EZ LYNK CSV. The CSV alone cannot make stock firmware switch pilots.
 The existing full configuration has not been overwritten. The numeric extension
 control defaults to 1 in the generated candidate; 0 selects base tables.
+
+Optional independent decoder/numeric checks:
+
+```sh
+python -m pip install pypcode==4.1.0
+python tools/pilot_sotf_pcode_check.py
+```
+
+Read-only check of a future same-format readback/export:
+
+```sh
+python tools/verify_pilot_sotf_9844.py /path/to/readback.bin
+```
+
+This accepts edited pilot copies while checking all nine calls/shims, the marker,
+enable value and all segment sums/CRCs. A matching file is not proof of ECU
+execution. A calibration-only readback cannot verify the program patch.
 
 ## Host validation completed
 
 - All nine original calls match the expected branch to the shared lookup.
 - All 45 initial copies match their source tables byte-for-byte.
-- Changed bytes are confined to the nine calls and two reserved ranges.
+- Changed bytes are confined to the nine calls, two reserved ranges and declared
+  checksum/CRC words.
 - Output length equals input length, 5,898,192 bytes.
 - 27,648 modeled selector paths cover every 8-bit position, readiness values
   0/1/2/255, and enable values 0/1/255, with randomized GPR/CR inputs.
@@ -101,28 +146,32 @@ control defaults to 1 in the generated candidate; 0 selects base tables.
   range failures or overlapping definitions in the repo validator.
 - The repo validator needed its CRLF-only split changed to `splitlines()` in
   memory to run on LF checkout files. This patch does not modify that validator.
+- Independent SLEIGH P-code checks execute the actual patched call, shim and GM
+  interpolation instructions: 162 original-equivalence cases, 360 cases with
+  distinct synthetic values in all 45 copies, and 72 fallback numeric cases.
+  The equivalence cases compare all GPRs plus LR/CTR/CR fields. Synthetic cases
+  include interpolation, corners and out-of-range fraction clamping. These are
+  finite host checks, not measured ECU tests. See `validation.json`.
 
-Candidate SHA-256:
-
-`f821b82165143328f2f13c45fa9467297b2e42c1632f0379268d42fa8daed32f`
-
-The generated candidate differs from the clean source at 22,694 bytes. This
-includes initialized header bytes, 21,600 bytes of table storage, shim code and
-the changed branch instructions; byte-difference counts need not equal sizes.
+The current candidate SHA-256 and changed-byte count are recorded in
+`deliverables/pilot_sotf_9844/manifest.json`. This includes initialized header
+bytes, 21,600 bytes of table storage, shim code, branch instructions and integrity
+words; byte-difference counts need not equal reservation sizes.
 
 ## Remaining work before any flash
 
-1. Confirm both proposed reservations are usable mapped flash in this exact
-   export and programming workflow; confirm the new code region's VLE mapping.
-2. Resolve program/calibration checksums and applicable authentication checks
-   without assuming a tool will automatically handle the changes.
-3. Independently verify the emitted instructions and full calling convention,
-   including e200/SPE state, interrupts, stack headroom and watchdog timing.
+1. Confirm the export-declared reservations and same-page placement are usable in
+   the actual ECU and programming workflow; static range tables are not a live
+   MMU or flash readback.
+2. Confirm ECU/tool acceptance, including applicable authentication requirements.
+   The additive sums/CRCs are resolved; that does not establish flash acceptance.
+3. Verify on hardware the full calling convention, e200/SPE state, interrupts,
+   stack headroom, watchdog timing and tune-transition behavior.
 4. Bench-test original-equivalent copies, disable/startup behavior and repeated
    position transitions; read back both program and calibration to confirm writes.
 5. Verify actual pilot contribution selection and final commanded quantities in
    normal operation before making a calibration change. Host checks do not prove
    this or engine behavior.
 
-No test result presently resolves these items, and no ready-to-flash binary is
-included in the repository changes.
+Those hardware/tool acceptance items remain open. No hardware-validated binary
+is included in the repository changes.

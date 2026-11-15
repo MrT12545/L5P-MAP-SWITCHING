@@ -12,6 +12,8 @@ import struct
 import unittest
 
 import pilot_sotf_9844 as P
+from e41_export_integrity import Export, crc16_arc
+from verify_pilot_sotf_9844 import verify
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -146,6 +148,7 @@ class PilotTests(unittest.TestCase):
         self.assertEqual(len(self.source), len(self.candidate))
         allowed = [tuple(self.manifest['program_reservation']),
                    tuple(self.manifest['calibration_reservation'])]
+        allowed += [(offset, offset + 2) for offset in self.manifest['integrity_file_offsets']]
         for _, _, call in P.TABLES:
             allowed.append((call - 0x200000, call - 0x200000 + 4))
         for index, (name, original, call) in enumerate(P.TABLES):
@@ -160,6 +163,50 @@ class PilotTests(unittest.TestCase):
         unexpected = [i for i, (a, b) in enumerate(zip(self.source, self.candidate))
                       if a != b and not any(s <= i < e for s, e in allowed)]
         self.assertEqual(unexpected, [])
+
+    def test_export_ranges_checksums_and_source_fixtures(self):
+        self.assertEqual(crc16_arc(b'123456789'), 0xBB3D)
+        fixtures = list((ROOT / 'uploads').glob('*.bin'))
+        self.assertEqual(len(fixtures), 3)
+        for path in fixtures:
+            data = path.read_bytes()
+            export = Export(data)
+            self.assertEqual(len(export.segments), 6)
+            self.assertTrue(all(r['sum_valid'] and r['crc_valid'] for r in export.audit()))
+            self.assertEqual(export.repair(data), data)
+        export = Export(self.candidate)
+        self.assertTrue(all(r['sum_valid'] and r['crc_valid'] for r in export.audit()))
+        broken = bytearray(self.candidate)
+        broken[self.manifest['tables'][0]['file_offset']] ^= 1
+        report = export.audit(broken)
+        self.assertEqual([r['segment'] for r in report if not r['sum_valid'] or not r['crc_valid']],
+                         ['calibration_5'])
+        self.assertEqual(export.repair(broken), Export(export.repair(broken)).repair(export.repair(broken)))
+
+    def test_wrapper_placement_and_mapping(self):
+        export = Export(self.source)
+        for index, (_, base, call) in enumerate(P.TABLES):
+            address = P.CODE_CPU + index * P.WRAPPER_STRIDE
+            self.assertEqual(address >> 12, 0x46673C >> 12)
+            self.assertEqual(export.file_offset(address, P.WRAPPER_STRIDE), address - 0x200000)
+            self.assertEqual(export.file_offset(call, 4), call - 0x200000)
+            self.assertEqual(export.file_offset(base, P.TABLE_BYTES), base + P.CAL_FILE_DELTA)
+
+    def test_readback_verifier_accepts_edits_and_rejects_missing_code(self):
+        self.assertEqual(verify(self.candidate, self.source)['status'], 'STATIC_PATCH_PRESENT')
+        self.assertEqual(verify(self.source, self.source)['status'], 'STATIC_CHECK_FAILED')
+        edited = bytearray(self.candidate)
+        at = self.manifest['tables'][0]['file_offset']
+        struct.pack_into('>h', edited, at, 512)
+        edited = Export(self.candidate).repair(edited)
+        report = verify(edited, self.source)
+        self.assertEqual(report['status'], 'STATIC_PATCH_PRESENT')
+        self.assertTrue(report['copies'][0]['differs_from_original'])
+        missing_code = bytearray(self.candidate)
+        at = P.TABLES[0][2] - 0x200000
+        missing_code[at:at + 4] = self.source[at:at + 4]
+        missing_code = Export(self.candidate).repair(missing_code)
+        self.assertEqual(verify(missing_code, self.source)['status'], 'STATIC_CHECK_FAILED')
 
     def test_config_uses_all_copies_with_valid_axes(self):
         source = (ROOT / 'deliverables/ezlynk/9844/EZLYNK_L5P_9844_Performance_Maps.csv').read_text(encoding='latin1')

@@ -1,0 +1,20 @@
+{
+  "unit_tests": {
+    "status": "PASS",
+    "count": 7,
+    "output": "Instruction-model paths: 27648; maximum shim instructions: 31\ntest_all_state_tune_enable_paths_and_register_preservation (test_pilot_sotf_9844.PilotTests.test_all_state_tune_enable_paths_and_register_preservation) ... ok\ntest_calls_copies_and_change_boundaries (test_pilot_sotf_9844.PilotTests.test_calls_copies_and_change_boundaries) ... ok\ntest_config_uses_all_copies_with_valid_axes (test_pilot_sotf_9844.PilotTests.test_config_uses_all_copies_with_valid_axes) ... ok\ntest_export_ranges_checksums_and_source_fixtures (test_pilot_sotf_9844.PilotTests.test_export_ranges_checksums_and_source_fixtures) ... ok\ntest_readback_verifier_accepts_edits_and_rejects_missing_code (test_pilot_sotf_9844.PilotTests.test_readback_verifier_accepts_edits_and_rejects_missing_code) ... ok\ntest_source_guard (test_pilot_sotf_9844.PilotTests.test_source_guard) ... ok\ntest_wrapper_placement_and_mapping (test_pilot_sotf_9844.PilotTests.test_wrapper_placement_and_mapping) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 17.032s\n\nOK\n"
+  },
+  "pcode_numeric_checks": {
+    "pypcode_version": "4.1.0",
+    "language": "PowerPC:BE:32:e200",
+    "baseline_numeric_cases": 162,
+    "distinct_copy_numeric_cases": 360,
+    "fallback_numeric_cases": 72,
+    "status": "PASS_HOST_MODEL_ONLY",
+    "limitations": [
+      "Not a complete ECU emulator",
+      "No interrupt or timing validation",
+      "Finite interpolation cases only; exceptional floating-point behavior untested"
+    ]
+  }
+}

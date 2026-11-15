@@ -1,4 +1,4 @@
-# BENCH DEVELOPMENT ONLY - firmware and checksum work required
+# BENCH DEVELOPMENT ONLY - matching firmware required; hardware unverified
 Unique ID,Address,NAME,DESC,UNITS,Type,Elements,Size,Endian,Signed,Math,Adder,Precision,MIN,MAX,LEVEL,AXIS,CATEGORY 1,CATEGORY 2,CATEGORY 3,MANUAL DATA
 FFFF,0x0000,TSM Pilot SOTF - BENCH DEVELOPMENT,,0,C,0,0,0,0,0,0,0,0,0,0,0,F900,0,0,
 FFFF,0x0000,Tune 1 Pilot Quantity,,0,C,0,0,0,0,0,0,0,0,0,0,0,F901,0,0,

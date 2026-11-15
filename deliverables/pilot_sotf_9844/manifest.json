@@ -1,8 +1,8 @@
 {
-  "status": "BENCH_DEVELOPMENT_CHECKSUM_UNFINISHED",
+  "status": "CHECKSUM_CORRECTED_HARDWARE_UNVERIFIED",
   "source_sha256": "e19408dd83316edc3deb463b5eae44414da0b1035a1819126f9d1efa5922a45d",
-  "candidate_sha256": "f821b82165143328f2f13c45fa9467297b2e42c1632f0379268d42fa8daed32f",
-  "changed_bytes": 22694,
+  "candidate_sha256": "e3339a9190b1225597e1550da472052d3ecdbea6ab2551b7d2884efadcb59e50",
+  "changed_bytes": 22702,
   "tables": [
     {
       "name": "KtFULC_V_QntyR1_Ptn1_LoBC1",
@@ -56,7 +56,7 @@
       "copy_cpu": 1509760,
       "file_offset": 5310816,
       "call_cpu": 3428990,
-      "wrapper_cpu": 4614400
+      "wrapper_cpu": 4614272
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
@@ -65,7 +65,7 @@
       "copy_cpu": 1510240,
       "file_offset": 5311296,
       "call_cpu": 3428990,
-      "wrapper_cpu": 4614400
+      "wrapper_cpu": 4614272
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
@@ -74,7 +74,7 @@
       "copy_cpu": 1510720,
       "file_offset": 5311776,
       "call_cpu": 3428990,
-      "wrapper_cpu": 4614400
+      "wrapper_cpu": 4614272
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
@@ -83,7 +83,7 @@
       "copy_cpu": 1511200,
       "file_offset": 5312256,
       "call_cpu": 3428990,
-      "wrapper_cpu": 4614400
+      "wrapper_cpu": 4614272
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
@@ -92,7 +92,7 @@
       "copy_cpu": 1511680,
       "file_offset": 5312736,
       "call_cpu": 3428990,
-      "wrapper_cpu": 4614400
+      "wrapper_cpu": 4614272
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
@@ -101,7 +101,7 @@
       "copy_cpu": 1512160,
       "file_offset": 5313216,
       "call_cpu": 3429098,
-      "wrapper_cpu": 4614656
+      "wrapper_cpu": 4614400
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
@@ -110,7 +110,7 @@
       "copy_cpu": 1512640,
       "file_offset": 5313696,
       "call_cpu": 3429098,
-      "wrapper_cpu": 4614656
+      "wrapper_cpu": 4614400
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
@@ -119,7 +119,7 @@
       "copy_cpu": 1513120,
       "file_offset": 5314176,
       "call_cpu": 3429098,
-      "wrapper_cpu": 4614656
+      "wrapper_cpu": 4614400
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
@@ -128,7 +128,7 @@
       "copy_cpu": 1513600,
       "file_offset": 5314656,
       "call_cpu": 3429098,
-      "wrapper_cpu": 4614656
+      "wrapper_cpu": 4614400
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
@@ -137,7 +137,7 @@
       "copy_cpu": 1514080,
       "file_offset": 5315136,
       "call_cpu": 3429098,
-      "wrapper_cpu": 4614656
+      "wrapper_cpu": 4614400
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
@@ -146,7 +146,7 @@
       "copy_cpu": 1514560,
       "file_offset": 5315616,
       "call_cpu": 3429618,
-      "wrapper_cpu": 4614912
+      "wrapper_cpu": 4614528
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
@@ -155,7 +155,7 @@
       "copy_cpu": 1515040,
       "file_offset": 5316096,
       "call_cpu": 3429618,
-      "wrapper_cpu": 4614912
+      "wrapper_cpu": 4614528
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
@@ -164,7 +164,7 @@
       "copy_cpu": 1515520,
       "file_offset": 5316576,
       "call_cpu": 3429618,
-      "wrapper_cpu": 4614912
+      "wrapper_cpu": 4614528
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
@@ -173,7 +173,7 @@
       "copy_cpu": 1516000,
       "file_offset": 5317056,
       "call_cpu": 3429618,
-      "wrapper_cpu": 4614912
+      "wrapper_cpu": 4614528
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
@@ -182,7 +182,7 @@
       "copy_cpu": 1516480,
       "file_offset": 5317536,
       "call_cpu": 3429618,
-      "wrapper_cpu": 4614912
+      "wrapper_cpu": 4614528
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
@@ -191,7 +191,7 @@
       "copy_cpu": 1516960,
       "file_offset": 5318016,
       "call_cpu": 3429562,
-      "wrapper_cpu": 4615168
+      "wrapper_cpu": 4614656
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
@@ -200,7 +200,7 @@
       "copy_cpu": 1517440,
       "file_offset": 5318496,
       "call_cpu": 3429562,
-      "wrapper_cpu": 4615168
+      "wrapper_cpu": 4614656
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
@@ -209,7 +209,7 @@
       "copy_cpu": 1517920,
       "file_offset": 5318976,
       "call_cpu": 3429562,
-      "wrapper_cpu": 4615168
+      "wrapper_cpu": 4614656
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
@@ -218,7 +218,7 @@
       "copy_cpu": 1518400,
       "file_offset": 5319456,
       "call_cpu": 3429562,
-      "wrapper_cpu": 4615168
+      "wrapper_cpu": 4614656
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
@@ -227,7 +227,7 @@
       "copy_cpu": 1518880,
       "file_offset": 5319936,
       "call_cpu": 3429562,
-      "wrapper_cpu": 4615168
+      "wrapper_cpu": 4614656
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
@@ -236,7 +236,7 @@
       "copy_cpu": 1519360,
       "file_offset": 5320416,
       "call_cpu": 3429670,
-      "wrapper_cpu": 4615424
+      "wrapper_cpu": 4614784
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
@@ -245,7 +245,7 @@
       "copy_cpu": 1519840,
       "file_offset": 5320896,
       "call_cpu": 3429670,
-      "wrapper_cpu": 4615424
+      "wrapper_cpu": 4614784
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
@@ -254,7 +254,7 @@
       "copy_cpu": 1520320,
       "file_offset": 5321376,
       "call_cpu": 3429670,
-      "wrapper_cpu": 4615424
+      "wrapper_cpu": 4614784
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
@@ -263,7 +263,7 @@
       "copy_cpu": 1520800,
       "file_offset": 5321856,
       "call_cpu": 3429670,
-      "wrapper_cpu": 4615424
+      "wrapper_cpu": 4614784
     },
     {
       "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
@@ -272,7 +272,7 @@
       "copy_cpu": 1521280,
       "file_offset": 5322336,
       "call_cpu": 3429670,
-      "wrapper_cpu": 4615424
+      "wrapper_cpu": 4614784
     },
     {
       "name": "KtFULC_V_QntyR2_LoBC1",
@@ -281,7 +281,7 @@
       "copy_cpu": 1521760,
       "file_offset": 5322816,
       "call_cpu": 3427742,
-      "wrapper_cpu": 4615680
+      "wrapper_cpu": 4614912
     },
     {
       "name": "KtFULC_V_QntyR2_LoBC1",
@@ -290,7 +290,7 @@
       "copy_cpu": 1522240,
       "file_offset": 5323296,
       "call_cpu": 3427742,
-      "wrapper_cpu": 4615680
+      "wrapper_cpu": 4614912
     },
     {
       "name": "KtFULC_V_QntyR2_LoBC1",
@@ -299,7 +299,7 @@
       "copy_cpu": 1522720,
       "file_offset": 5323776,
       "call_cpu": 3427742,
-      "wrapper_cpu": 4615680
+      "wrapper_cpu": 4614912
     },
     {
       "name": "KtFULC_V_QntyR2_LoBC1",
@@ -308,7 +308,7 @@
       "copy_cpu": 1523200,
       "file_offset": 5324256,
       "call_cpu": 3427742,
-      "wrapper_cpu": 4615680
+      "wrapper_cpu": 4614912
     },
     {
       "name": "KtFULC_V_QntyR2_LoBC1",
@@ -317,7 +317,7 @@
       "copy_cpu": 1523680,
       "file_offset": 5324736,
       "call_cpu": 3427742,
-      "wrapper_cpu": 4615680
+      "wrapper_cpu": 4614912
     },
     {
       "name": "KtFULC_V_QntyR2_MidBC1",
@@ -326,7 +326,7 @@
       "copy_cpu": 1524160,
       "file_offset": 5325216,
       "call_cpu": 3427686,
-      "wrapper_cpu": 4615936
+      "wrapper_cpu": 4615040
     },
     {
       "name": "KtFULC_V_QntyR2_MidBC1",
@@ -335,7 +335,7 @@
       "copy_cpu": 1524640,
       "file_offset": 5325696,
       "call_cpu": 3427686,
-      "wrapper_cpu": 4615936
+      "wrapper_cpu": 4615040
     },
     {
       "name": "KtFULC_V_QntyR2_MidBC1",
@@ -344,7 +344,7 @@
       "copy_cpu": 1525120,
       "file_offset": 5326176,
       "call_cpu": 3427686,
-      "wrapper_cpu": 4615936
+      "wrapper_cpu": 4615040
     },
     {
       "name": "KtFULC_V_QntyR2_MidBC1",
@@ -353,7 +353,7 @@
       "copy_cpu": 1525600,
       "file_offset": 5326656,
       "call_cpu": 3427686,
-      "wrapper_cpu": 4615936
+      "wrapper_cpu": 4615040
     },
     {
       "name": "KtFULC_V_QntyR2_MidBC1",
@@ -362,7 +362,7 @@
       "copy_cpu": 1526080,
       "file_offset": 5327136,
       "call_cpu": 3427686,
-      "wrapper_cpu": 4615936
+      "wrapper_cpu": 4615040
     },
     {
       "name": "KtFULC_V_QntyR2_SeaBC1",
@@ -371,7 +371,7 @@
       "copy_cpu": 1526560,
       "file_offset": 5327616,
       "call_cpu": 3427794,
-      "wrapper_cpu": 4616192
+      "wrapper_cpu": 4615168
     },
     {
       "name": "KtFULC_V_QntyR2_SeaBC1",
@@ -380,7 +380,7 @@
       "copy_cpu": 1527040,
       "file_offset": 5328096,
       "call_cpu": 3427794,
-      "wrapper_cpu": 4616192
+      "wrapper_cpu": 4615168
     },
     {
       "name": "KtFULC_V_QntyR2_SeaBC1",
@@ -389,7 +389,7 @@
       "copy_cpu": 1527520,
       "file_offset": 5328576,
       "call_cpu": 3427794,
-      "wrapper_cpu": 4616192
+      "wrapper_cpu": 4615168
     },
     {
       "name": "KtFULC_V_QntyR2_SeaBC1",
@@ -398,7 +398,7 @@
       "copy_cpu": 1528000,
       "file_offset": 5329056,
       "call_cpu": 3427794,
-      "wrapper_cpu": 4616192
+      "wrapper_cpu": 4615168
     },
     {
       "name": "KtFULC_V_QntyR2_SeaBC1",
@@ -407,20 +407,142 @@
       "copy_cpu": 1528480,
       "file_offset": 5329536,
       "call_cpu": 3427794,
-      "wrapper_cpu": 4616192
+      "wrapper_cpu": 4615168
     }
   ],
   "enable_file_offset": 5308384,
   "program_reservation": [
     2516992,
-    2519296
+    2518144
   ],
   "calibration_reservation": [
     5308384,
     5330016
   ],
+  "integrity": [
+    {
+      "segment": "program",
+      "blocks": [
+        [
+          2097152,
+          5767119
+        ],
+        [
+          5767152,
+          6291455
+        ]
+      ],
+      "checksum_cpu": 2097168,
+      "crc_cpu": 2097200,
+      "stored_sum": 58322,
+      "expected_sum": 58322,
+      "stored_crc": 32723,
+      "expected_crc": 32723,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_1",
+      "blocks": [
+        [
+          393216,
+          405503
+        ]
+      ],
+      "checksum_cpu": 393216,
+      "crc_cpu": 393248,
+      "stored_sum": 59529,
+      "expected_sum": 59529,
+      "stored_crc": 61016,
+      "expected_crc": 61016,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_2",
+      "blocks": [
+        [
+          405504,
+          413695
+        ]
+      ],
+      "checksum_cpu": 405504,
+      "crc_cpu": 405536,
+      "stored_sum": 30486,
+      "expected_sum": 30486,
+      "stored_crc": 7952,
+      "expected_crc": 7952,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_3",
+      "blocks": [
+        [
+          413696,
+          421887
+        ]
+      ],
+      "checksum_cpu": 413696,
+      "crc_cpu": 413728,
+      "stored_sum": 19178,
+      "expected_sum": 19178,
+      "stored_crc": 31580,
+      "expected_crc": 31580,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_4",
+      "blocks": [
+        [
+          421888,
+          499711
+        ]
+      ],
+      "checksum_cpu": 421888,
+      "crc_cpu": 421920,
+      "stored_sum": 64543,
+      "expected_sum": 64543,
+      "stored_crc": 25452,
+      "expected_crc": 25452,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_5",
+      "blocks": [
+        [
+          499712,
+          2097135
+        ]
+      ],
+      "checksum_cpu": 499712,
+      "crc_cpu": 499744,
+      "stored_sum": 59369,
+      "expected_sum": 59369,
+      "stored_crc": 40538,
+      "expected_crc": 40538,
+      "sum_valid": true,
+      "crc_valid": true
+    }
+  ],
+  "integrity_file_offsets": [
+    16,
+    48,
+    4194272,
+    4194304,
+    4206560,
+    4206592,
+    4214752,
+    4214784,
+    4222944,
+    4222976,
+    4300768,
+    4300800
+  ],
   "limitations": [
-    "No checksum or signature validation/correction",
+    "Export sums and CRCs validated; no signature/authentication validation",
     "No hardware execution or timing validation",
     "Erased bytes alone do not prove usable mapped flash",
     "Only nine BC1 pilot quantity contributions switch; other contributions stay shared",
