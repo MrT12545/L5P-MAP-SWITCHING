@@ -105,7 +105,17 @@ def visible_layout(rows, old_folders):
             logical = (roots[15], re.sub(r'^\d+ ', '', root), 'Breakpoints')
         else:
             kind = {'Z': 'Tables', 'X': 'Curves', 'Y': 'Curves', 'N': 'Parameters', 'S': 'Switches'}[row[5]]
-            logical = (root, position, kind)
+            if tune:
+                family = re.sub(r'^\d+ ', '', root)
+                if 't_ET_InjTbl' in gm or 'Pulse Width' in row[2]:
+                    family = 'Pulse Width'
+                elif pilot:
+                    family = 'Pilot Injection Quantity'
+                if row[5] in ('N', 'S'):
+                    family += ' - ' + kind
+                logical = ('00 SOTF Tunes', position, family)
+            else:
+                logical = (root, position, kind)
             counts[root] += 1
         classified.append((row, logical))
     folders = []
@@ -119,7 +129,7 @@ def visible_layout(rows, old_folders):
         return identities[path]
 
     # Root declaration order is explicit, so the four requested groups come first.
-    for root in roots:
+    for root in ['00 SOTF Tunes'] + roots:
         if any(path[0] == root for _, path in classified):
             folder((root,))
     result = []

@@ -1,7 +1,7 @@
 {
   "binary_sha256": "62a44d01926f59ae51aceb4a398690b46b07f10c2f2f2a606f8e8906d3eeae31",
-  "output_sha256": "2e95a0d080d4fbd676fc8b0b8e2fb7921a9e7be415f9316d7bf7449b281feab4",
-  "folders": 183,
+  "output_sha256": "803b2f61d967e6e22e50e1808b9b73b3ea64b17559bca845bedeccdd9c3dd7fb",
+  "folders": 149,
   "maps": 1125,
   "map_types": {
     "X": 185,
@@ -60,15 +60,5 @@
     }
   ],
   "excluded": "9843 configs; obsolete swapped-axis configs; NOT_INCLUDED reports; WinOLS-format lists",
-  "live_ezlynk_import_verified": false,
-  "validation": {
-    "source_coverage_tests": 4,
-    "source_coverage_tests_status": "PASS",
-    "input_matrix_axis_checks": 489,
-    "numeric_and_axis_columns_unchanged_from_v1": true,
-    "repo_validator_errors": 0,
-    "repo_validator_out_of_range_or_nonfinite": 0,
-    "repo_validator_address_overlaps": 0,
-    "actual_ezlynk_import_verified": false
-  }
+  "live_ezlynk_import_verified": false
 }

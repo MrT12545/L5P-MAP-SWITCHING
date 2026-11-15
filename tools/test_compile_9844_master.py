@@ -83,7 +83,15 @@ class MasterTests(unittest.TestCase):
                 self.assertEqual(contexts.setdefault(fid, context), context)
         pilots = [r for r in self.maps if re.match(r'Tune [1-5] - Pilot [12] Quantity', r[2])]
         self.assertEqual(len(pilots), 45)
-        self.assertTrue(all(folders[r[17]] == '01 Pilot Injection' for r in pilots))
+        self.assertTrue(all(folders[r[17]] == '00 SOTF Tunes' for r in pilots))
+        for tune in range(1, 6):
+            slot = [r for r in self.maps if folders[r[17]] == '00 SOTF Tunes'
+                    and folders[r[18]] == f'Tune {tune}']
+            for family, count in [('Main Injection Quantity', 3),
+                                  ('Main Injection Timing', 6), ('Pulse Width', 1),
+                                  ('Pilot Injection Quantity', 9), ('Turbo Vane Position', 6)]:
+                self.assertEqual(sum(r[5] == 'Z' and folders[r[19]] == family
+                                     for r in slot), count, (tune, family))
 
 
 if __name__ == '__main__':

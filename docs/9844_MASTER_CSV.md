@@ -4,7 +4,7 @@
 9844 performance, fixed-v3 P/N/vane, pilot-SOTF and stationary-diagnostic CSVs.
 It targets `9844_PILOT_PN_DIAGNOSTIC_DISABLED_UNVERIFIED.bin`.
 
-The master contains 1,125 definitions in 183 folders: 398 two-dimensional maps,
+The master contains 1,125 definitions in 149 folders: 398 two-dimensional maps,
 457 X/Y definitions and 270 numeric/selection definitions. All 45 pilot copies,
 both stationary diagnostic controls and the separate diagnostic P/N demand table
 are present. The five inactive per-tune rail-pump copies are retained as labeled
@@ -24,13 +24,12 @@ swapped-axis configurations, WinOLS-format map lists and NOT_INCLUDED reports
 are excluded. They are separate layouts/formats or reports, not additional
 compatible EZ LYNK definitions for this binary.
 
-The first four operating roots are Pilot Injection, Main Injection Quantity,
-Main Injection Timing and Turbo Vane Position. Within each, Base and Shared and
-Tune 1-5 branches separate the operating maps. Each complete folder path gets
-its own ID; labels such as Tables and Parameters are not represented by a single
-global folder ID reused under multiple parents. New per-tune pilot copies have
-plain Pilot 1/Pilot 2 quantity names instead of GM-only identifier titles. Main
-torque-to-fuel maps are also labeled Main Injection Quantity.
+The first root is SOTF Tunes. Its Tune 1-5 branches each contain Main Injection
+Quantity, Main Injection Timing, Pulse Width, Pilot Injection Quantity, Turbo
+Vane Position and the other switched map families. Per position there are three
+quantity maps, six timing maps, one pulse-width map, nine pilot quantity maps and
+six vane maps. Base/shared maps retain separate operating roots; breakpoint
+records remain under Shared Axes. Each complete folder path has its own ID.
 
 Validation: four source-coverage/navigation tests pass, including all 489 input matrix
 definitions and their axis vectors. The repo validator reports zero structural,
