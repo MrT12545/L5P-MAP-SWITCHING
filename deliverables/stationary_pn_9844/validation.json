@@ -1,0 +1,139 @@
+{
+  "host_unit_tests": 7,
+  "host_unit_tests_status": "PASS",
+  "selector_to_cut_cases": 16,
+  "demand_interpolation_cases": 16,
+  "csv_structure": "55 maps and 12 folders; 0 repo-validator errors",
+  "readback_checker_on_candidate": {
+    "status": "STATIC_DIAGNOSTIC_PATCH_PRESENT",
+    "diagnostic_switches": [
+      0,
+      0
+    ],
+    "marker_matches": true,
+    "hooks": [
+      {
+        "purpose": "tcm",
+        "hook_matches": true,
+        "code_matches": true
+      },
+      {
+        "purpose": "demand",
+        "hook_matches": true,
+        "code_matches": true
+      }
+    ],
+    "pilot_patch_status": "STATIC_PATCH_PRESENT",
+    "integrity": [
+      {
+        "segment": "program",
+        "blocks": [
+          [
+            2097152,
+            5767119
+          ],
+          [
+            5767152,
+            6291455
+          ]
+        ],
+        "checksum_cpu": 2097168,
+        "crc_cpu": 2097200,
+        "stored_sum": 18064,
+        "expected_sum": 18064,
+        "stored_crc": 63909,
+        "expected_crc": 63909,
+        "sum_valid": true,
+        "crc_valid": true
+      },
+      {
+        "segment": "calibration_1",
+        "blocks": [
+          [
+            393216,
+            405503
+          ]
+        ],
+        "checksum_cpu": 393216,
+        "crc_cpu": 393248,
+        "stored_sum": 59529,
+        "expected_sum": 59529,
+        "stored_crc": 61016,
+        "expected_crc": 61016,
+        "sum_valid": true,
+        "crc_valid": true
+      },
+      {
+        "segment": "calibration_2",
+        "blocks": [
+          [
+            405504,
+            413695
+          ]
+        ],
+        "checksum_cpu": 405504,
+        "crc_cpu": 405536,
+        "stored_sum": 30486,
+        "expected_sum": 30486,
+        "stored_crc": 7952,
+        "expected_crc": 7952,
+        "sum_valid": true,
+        "crc_valid": true
+      },
+      {
+        "segment": "calibration_3",
+        "blocks": [
+          [
+            413696,
+            421887
+          ]
+        ],
+        "checksum_cpu": 413696,
+        "crc_cpu": 413728,
+        "stored_sum": 19178,
+        "expected_sum": 19178,
+        "stored_crc": 31580,
+        "expected_crc": 31580,
+        "sum_valid": true,
+        "crc_valid": true
+      },
+      {
+        "segment": "calibration_4",
+        "blocks": [
+          [
+            421888,
+            499711
+          ]
+        ],
+        "checksum_cpu": 421888,
+        "crc_cpu": 421920,
+        "stored_sum": 64543,
+        "expected_sum": 64543,
+        "stored_crc": 25452,
+        "expected_crc": 25452,
+        "sum_valid": true,
+        "crc_valid": true
+      },
+      {
+        "segment": "calibration_5",
+        "blocks": [
+          [
+            499712,
+            2097135
+          ]
+        ],
+        "checksum_cpu": 499712,
+        "crc_cpu": 499744,
+        "stored_sum": 35246,
+        "expected_sum": 35246,
+        "stored_crc": 21632,
+        "expected_crc": 21632,
+        "sum_valid": true,
+        "crc_valid": true
+      }
+    ],
+    "limitation": "File presence does not establish live gear qualification, ECU execution or engine behavior"
+  },
+  "hardware_tested": false,
+  "sleigh_guard_cases": 1350
+}
