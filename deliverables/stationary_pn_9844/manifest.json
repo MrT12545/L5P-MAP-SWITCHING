@@ -1,0 +1,159 @@
+{
+  "status": "DEFAULT_DISABLED_HARDWARE_UNVERIFIED",
+  "source_sha256": "e19408dd83316edc3deb463b5eae44414da0b1035a1819126f9d1efa5922a45d",
+  "pilot_base_sha256": "e3339a9190b1225597e1550da472052d3ecdbea6ab2551b7d2884efadcb59e50",
+  "candidate_sha256": "62a44d01926f59ae51aceb4a398690b46b07f10c2f2f2a606f8e8906d3eeae31",
+  "switches": {
+    "tcm_speed_request_exclusion": 5330144,
+    "stationary_demand_table": 5330145
+  },
+  "default_switch_values": [
+    0,
+    0
+  ],
+  "guard": {
+    "gear_states": [
+      0,
+      9
+    ],
+    "vehicle_speed_raw_equals": 0,
+    "tcm_request_status_required": 1
+  },
+  "hooks": {
+    "tcm": 2858658,
+    "pn_call": 2635618
+  },
+  "reservations": [
+    {
+      "cpu": 4615424,
+      "size": 256,
+      "file_offset": 2518272
+    },
+    {
+      "cpu": 4615680,
+      "size": 256,
+      "file_offset": 2518528
+    },
+    {
+      "cpu": 1529088,
+      "size": 194,
+      "file_offset": 5330144
+    }
+  ],
+  "pn_table_cpu": 1529120,
+  "pn_table_file_offset": 5330176,
+  "integrity": [
+    {
+      "segment": "program",
+      "blocks": [
+        [
+          2097152,
+          5767119
+        ],
+        [
+          5767152,
+          6291455
+        ]
+      ],
+      "checksum_cpu": 2097168,
+      "crc_cpu": 2097200,
+      "stored_sum": 18064,
+      "expected_sum": 18064,
+      "stored_crc": 63909,
+      "expected_crc": 63909,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_1",
+      "blocks": [
+        [
+          393216,
+          405503
+        ]
+      ],
+      "checksum_cpu": 393216,
+      "crc_cpu": 393248,
+      "stored_sum": 59529,
+      "expected_sum": 59529,
+      "stored_crc": 61016,
+      "expected_crc": 61016,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_2",
+      "blocks": [
+        [
+          405504,
+          413695
+        ]
+      ],
+      "checksum_cpu": 405504,
+      "crc_cpu": 405536,
+      "stored_sum": 30486,
+      "expected_sum": 30486,
+      "stored_crc": 7952,
+      "expected_crc": 7952,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_3",
+      "blocks": [
+        [
+          413696,
+          421887
+        ]
+      ],
+      "checksum_cpu": 413696,
+      "crc_cpu": 413728,
+      "stored_sum": 19178,
+      "expected_sum": 19178,
+      "stored_crc": 31580,
+      "expected_crc": 31580,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_4",
+      "blocks": [
+        [
+          421888,
+          499711
+        ]
+      ],
+      "checksum_cpu": 421888,
+      "crc_cpu": 421920,
+      "stored_sum": 64543,
+      "expected_sum": 64543,
+      "stored_crc": 25452,
+      "expected_crc": 25452,
+      "sum_valid": true,
+      "crc_valid": true
+    },
+    {
+      "segment": "calibration_5",
+      "blocks": [
+        [
+          499712,
+          2097135
+        ]
+      ],
+      "checksum_cpu": 499712,
+      "crc_cpu": 499744,
+      "stored_sum": 35246,
+      "expected_sum": 35246,
+      "stored_crc": 21632,
+      "expected_crc": 21632,
+      "sum_valid": true,
+      "crc_valid": true
+    }
+  ],
+  "limitations": [
+    "Internal gear/status qualification is not verified on the truck",
+    "A false P/N or zero-speed input could satisfy this software guard",
+    "Live TCM arbitration and engine behavior remain unverified",
+    "Default-off adds code execution; host tests do not prove hardware equivalence"
+  ]
+}
