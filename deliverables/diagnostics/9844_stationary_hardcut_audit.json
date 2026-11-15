@@ -1,0 +1,200 @@
+{
+  "source_file": "ECM-binary-file-G66E41AT1-Nelly_11-10-26_-JOSEPH_CLARK_SOTF_Will_Miller_edit__nelly_3_V3_11_10_26_V2__exported.bin",
+  "source_sha256": "e19408dd83316edc3deb463b5eae44414da0b1035a1819126f9d1efa5922a45d",
+  "calibration": {
+    "KeEOSC_n_RPM_EngExtremeHystHi": {
+      "cpu": "$BF89C",
+      "file_offset": "$45F87C",
+      "value": 4200.0
+    },
+    "KeEOSC_n_RPM_EngExtremeHystLo": {
+      "cpu": "$BF89E",
+      "file_offset": "$45F87E",
+      "value": 4175.0
+    },
+    "KeEOSC_n_FC_EngSpdLmtOfst": {
+      "cpu": "$BF898",
+      "file_offset": "$45F878",
+      "value": 8000.0
+    },
+    "KeEOSC_n_FC_AntiStallLim": {
+      "cpu": "$BF89A",
+      "file_offset": "$45F87A",
+      "value": 1200.0
+    },
+    "KeDTRC_b_UseBaseProgOnly": {
+      "cpu": "$7A72C",
+      "file_offset": "$41A70C",
+      "value": 0.0
+    },
+    "KeDTRC_v_MinARM": {
+      "cpu": "$7A750",
+      "file_offset": "$41A730",
+      "value": 15.0
+    }
+  },
+  "pn_table": {
+    "cpu": "$7AA98",
+    "file_offset": "$41AA78",
+    "rpm": [
+      500.0,
+      1000.0,
+      1500.0,
+      2000.0,
+      2500.0,
+      3000.0,
+      3500.0,
+      4000.0,
+      6000.0
+    ],
+    "pedal": [
+      0.0,
+      1.0,
+      8.0,
+      12.0,
+      20.0,
+      32.0,
+      50.0,
+      86.0,
+      100.0
+    ],
+    "full_pedal_nm": [
+      1909.75,
+      763.75,
+      445.5,
+      286.25,
+      190.75,
+      127.25,
+      81.75,
+      35.75,
+      3.0
+    ],
+    "full_pedal_lbft": [
+      1408.5593140527499,
+      563.31309129875,
+      328.58393737949996,
+      211.12716515124998,
+      140.68997992175,
+      93.85478346024999,
+      60.29570568075,
+      26.367846826749997,
+      2.212686447
+    ]
+  },
+  "original_definition_notes": {
+    "KeEOSC_n_FC_EngSpdLmtOfst": "Mapa: Calibration Note: Fuelcut request will be enable when engine speed limit + this calibration is less than current Engine speed when the TCM is requesting a engine speed limit",
+    "KeEOSC_n_FC_AntiStallLim": "Mapa: Calibration Note: For antistall protection, the EOSR fuel cut speed request is limited to the maximum of engine speed limit + KeEOSC_n_FC_EngSpdLmtOfst and this cal"
+  },
+  "controlled_example": {
+    "arbitrated_limit_rpm": 3800,
+    "tcm_cut_threshold_raw": 65535,
+    "tcm_cut_threshold_rpm": 8191.875,
+    "prior_cut_flag": 0,
+    "gear_state": 0
+  },
+  "instruction_block_cases": [
+    {
+      "limiter_source": 0,
+      "engine_rpm": 3800,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 3800,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 4200,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 4200,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 4300,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 1
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 4300,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 1
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 8000,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 1
+    },
+    {
+      "limiter_source": 0,
+      "engine_rpm": 8000,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 1
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 3800,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 3800,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 4200,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 4200,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 4300,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 4300,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 8000,
+      "vehicle_kph": 0,
+      "extreme_fuel_cut_flag": 0
+    },
+    {
+      "limiter_source": 4,
+      "engine_rpm": 8000,
+      "vehicle_kph": 30,
+      "extreme_fuel_cut_flag": 0
+    }
+  ],
+  "conclusion": "A selected transmission-speed limit can suppress the shared extreme hardcut; live activation remains unproven",
+  "limits": [
+    "No actual TCM traffic, ECU trace or datalog is available",
+    "The tested source states are controlled inputs, not observed truck states",
+    "This is not a complete limiter, arbitration, hysteresis or engine model",
+    "No calibration or firmware was changed"
+  ]
+}
