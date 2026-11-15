@@ -1,0 +1,429 @@
+{
+  "status": "BENCH_DEVELOPMENT_CHECKSUM_UNFINISHED",
+  "source_sha256": "e19408dd83316edc3deb463b5eae44414da0b1035a1819126f9d1efa5922a45d",
+  "candidate_sha256": "f821b82165143328f2f13c45fa9467297b2e42c1632f0379268d42fa8daed32f",
+  "changed_bytes": 22694,
+  "tables": [
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_LoBC1",
+      "tune": 1,
+      "base_cpu": 1023448,
+      "copy_cpu": 1507360,
+      "file_offset": 5308416,
+      "call_cpu": 3429048,
+      "wrapper_cpu": 4614144
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_LoBC1",
+      "tune": 2,
+      "base_cpu": 1023448,
+      "copy_cpu": 1507840,
+      "file_offset": 5308896,
+      "call_cpu": 3429048,
+      "wrapper_cpu": 4614144
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_LoBC1",
+      "tune": 3,
+      "base_cpu": 1023448,
+      "copy_cpu": 1508320,
+      "file_offset": 5309376,
+      "call_cpu": 3429048,
+      "wrapper_cpu": 4614144
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_LoBC1",
+      "tune": 4,
+      "base_cpu": 1023448,
+      "copy_cpu": 1508800,
+      "file_offset": 5309856,
+      "call_cpu": 3429048,
+      "wrapper_cpu": 4614144
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_LoBC1",
+      "tune": 5,
+      "base_cpu": 1023448,
+      "copy_cpu": 1509280,
+      "file_offset": 5310336,
+      "call_cpu": 3429048,
+      "wrapper_cpu": 4614144
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
+      "tune": 1,
+      "base_cpu": 1024408,
+      "copy_cpu": 1509760,
+      "file_offset": 5310816,
+      "call_cpu": 3428990,
+      "wrapper_cpu": 4614400
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
+      "tune": 2,
+      "base_cpu": 1024408,
+      "copy_cpu": 1510240,
+      "file_offset": 5311296,
+      "call_cpu": 3428990,
+      "wrapper_cpu": 4614400
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
+      "tune": 3,
+      "base_cpu": 1024408,
+      "copy_cpu": 1510720,
+      "file_offset": 5311776,
+      "call_cpu": 3428990,
+      "wrapper_cpu": 4614400
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
+      "tune": 4,
+      "base_cpu": 1024408,
+      "copy_cpu": 1511200,
+      "file_offset": 5312256,
+      "call_cpu": 3428990,
+      "wrapper_cpu": 4614400
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_MidBC1",
+      "tune": 5,
+      "base_cpu": 1024408,
+      "copy_cpu": 1511680,
+      "file_offset": 5312736,
+      "call_cpu": 3428990,
+      "wrapper_cpu": 4614400
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
+      "tune": 1,
+      "base_cpu": 1025848,
+      "copy_cpu": 1512160,
+      "file_offset": 5313216,
+      "call_cpu": 3429098,
+      "wrapper_cpu": 4614656
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
+      "tune": 2,
+      "base_cpu": 1025848,
+      "copy_cpu": 1512640,
+      "file_offset": 5313696,
+      "call_cpu": 3429098,
+      "wrapper_cpu": 4614656
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
+      "tune": 3,
+      "base_cpu": 1025848,
+      "copy_cpu": 1513120,
+      "file_offset": 5314176,
+      "call_cpu": 3429098,
+      "wrapper_cpu": 4614656
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
+      "tune": 4,
+      "base_cpu": 1025848,
+      "copy_cpu": 1513600,
+      "file_offset": 5314656,
+      "call_cpu": 3429098,
+      "wrapper_cpu": 4614656
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn1_SeaBC1",
+      "tune": 5,
+      "base_cpu": 1025848,
+      "copy_cpu": 1514080,
+      "file_offset": 5315136,
+      "call_cpu": 3429098,
+      "wrapper_cpu": 4614656
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
+      "tune": 1,
+      "base_cpu": 1027288,
+      "copy_cpu": 1514560,
+      "file_offset": 5315616,
+      "call_cpu": 3429618,
+      "wrapper_cpu": 4614912
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
+      "tune": 2,
+      "base_cpu": 1027288,
+      "copy_cpu": 1515040,
+      "file_offset": 5316096,
+      "call_cpu": 3429618,
+      "wrapper_cpu": 4614912
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
+      "tune": 3,
+      "base_cpu": 1027288,
+      "copy_cpu": 1515520,
+      "file_offset": 5316576,
+      "call_cpu": 3429618,
+      "wrapper_cpu": 4614912
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
+      "tune": 4,
+      "base_cpu": 1027288,
+      "copy_cpu": 1516000,
+      "file_offset": 5317056,
+      "call_cpu": 3429618,
+      "wrapper_cpu": 4614912
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_LoBC1",
+      "tune": 5,
+      "base_cpu": 1027288,
+      "copy_cpu": 1516480,
+      "file_offset": 5317536,
+      "call_cpu": 3429618,
+      "wrapper_cpu": 4614912
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
+      "tune": 1,
+      "base_cpu": 1028248,
+      "copy_cpu": 1516960,
+      "file_offset": 5318016,
+      "call_cpu": 3429562,
+      "wrapper_cpu": 4615168
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
+      "tune": 2,
+      "base_cpu": 1028248,
+      "copy_cpu": 1517440,
+      "file_offset": 5318496,
+      "call_cpu": 3429562,
+      "wrapper_cpu": 4615168
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
+      "tune": 3,
+      "base_cpu": 1028248,
+      "copy_cpu": 1517920,
+      "file_offset": 5318976,
+      "call_cpu": 3429562,
+      "wrapper_cpu": 4615168
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
+      "tune": 4,
+      "base_cpu": 1028248,
+      "copy_cpu": 1518400,
+      "file_offset": 5319456,
+      "call_cpu": 3429562,
+      "wrapper_cpu": 4615168
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_MidBC1",
+      "tune": 5,
+      "base_cpu": 1028248,
+      "copy_cpu": 1518880,
+      "file_offset": 5319936,
+      "call_cpu": 3429562,
+      "wrapper_cpu": 4615168
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
+      "tune": 1,
+      "base_cpu": 1029688,
+      "copy_cpu": 1519360,
+      "file_offset": 5320416,
+      "call_cpu": 3429670,
+      "wrapper_cpu": 4615424
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
+      "tune": 2,
+      "base_cpu": 1029688,
+      "copy_cpu": 1519840,
+      "file_offset": 5320896,
+      "call_cpu": 3429670,
+      "wrapper_cpu": 4615424
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
+      "tune": 3,
+      "base_cpu": 1029688,
+      "copy_cpu": 1520320,
+      "file_offset": 5321376,
+      "call_cpu": 3429670,
+      "wrapper_cpu": 4615424
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
+      "tune": 4,
+      "base_cpu": 1029688,
+      "copy_cpu": 1520800,
+      "file_offset": 5321856,
+      "call_cpu": 3429670,
+      "wrapper_cpu": 4615424
+    },
+    {
+      "name": "KtFULC_V_QntyR1_Ptn2_SeaBC1",
+      "tune": 5,
+      "base_cpu": 1029688,
+      "copy_cpu": 1521280,
+      "file_offset": 5322336,
+      "call_cpu": 3429670,
+      "wrapper_cpu": 4615424
+    },
+    {
+      "name": "KtFULC_V_QntyR2_LoBC1",
+      "tune": 1,
+      "base_cpu": 1031272,
+      "copy_cpu": 1521760,
+      "file_offset": 5322816,
+      "call_cpu": 3427742,
+      "wrapper_cpu": 4615680
+    },
+    {
+      "name": "KtFULC_V_QntyR2_LoBC1",
+      "tune": 2,
+      "base_cpu": 1031272,
+      "copy_cpu": 1522240,
+      "file_offset": 5323296,
+      "call_cpu": 3427742,
+      "wrapper_cpu": 4615680
+    },
+    {
+      "name": "KtFULC_V_QntyR2_LoBC1",
+      "tune": 3,
+      "base_cpu": 1031272,
+      "copy_cpu": 1522720,
+      "file_offset": 5323776,
+      "call_cpu": 3427742,
+      "wrapper_cpu": 4615680
+    },
+    {
+      "name": "KtFULC_V_QntyR2_LoBC1",
+      "tune": 4,
+      "base_cpu": 1031272,
+      "copy_cpu": 1523200,
+      "file_offset": 5324256,
+      "call_cpu": 3427742,
+      "wrapper_cpu": 4615680
+    },
+    {
+      "name": "KtFULC_V_QntyR2_LoBC1",
+      "tune": 5,
+      "base_cpu": 1031272,
+      "copy_cpu": 1523680,
+      "file_offset": 5324736,
+      "call_cpu": 3427742,
+      "wrapper_cpu": 4615680
+    },
+    {
+      "name": "KtFULC_V_QntyR2_MidBC1",
+      "tune": 1,
+      "base_cpu": 1032232,
+      "copy_cpu": 1524160,
+      "file_offset": 5325216,
+      "call_cpu": 3427686,
+      "wrapper_cpu": 4615936
+    },
+    {
+      "name": "KtFULC_V_QntyR2_MidBC1",
+      "tune": 2,
+      "base_cpu": 1032232,
+      "copy_cpu": 1524640,
+      "file_offset": 5325696,
+      "call_cpu": 3427686,
+      "wrapper_cpu": 4615936
+    },
+    {
+      "name": "KtFULC_V_QntyR2_MidBC1",
+      "tune": 3,
+      "base_cpu": 1032232,
+      "copy_cpu": 1525120,
+      "file_offset": 5326176,
+      "call_cpu": 3427686,
+      "wrapper_cpu": 4615936
+    },
+    {
+      "name": "KtFULC_V_QntyR2_MidBC1",
+      "tune": 4,
+      "base_cpu": 1032232,
+      "copy_cpu": 1525600,
+      "file_offset": 5326656,
+      "call_cpu": 3427686,
+      "wrapper_cpu": 4615936
+    },
+    {
+      "name": "KtFULC_V_QntyR2_MidBC1",
+      "tune": 5,
+      "base_cpu": 1032232,
+      "copy_cpu": 1526080,
+      "file_offset": 5327136,
+      "call_cpu": 3427686,
+      "wrapper_cpu": 4615936
+    },
+    {
+      "name": "KtFULC_V_QntyR2_SeaBC1",
+      "tune": 1,
+      "base_cpu": 1033672,
+      "copy_cpu": 1526560,
+      "file_offset": 5327616,
+      "call_cpu": 3427794,
+      "wrapper_cpu": 4616192
+    },
+    {
+      "name": "KtFULC_V_QntyR2_SeaBC1",
+      "tune": 2,
+      "base_cpu": 1033672,
+      "copy_cpu": 1527040,
+      "file_offset": 5328096,
+      "call_cpu": 3427794,
+      "wrapper_cpu": 4616192
+    },
+    {
+      "name": "KtFULC_V_QntyR2_SeaBC1",
+      "tune": 3,
+      "base_cpu": 1033672,
+      "copy_cpu": 1527520,
+      "file_offset": 5328576,
+      "call_cpu": 3427794,
+      "wrapper_cpu": 4616192
+    },
+    {
+      "name": "KtFULC_V_QntyR2_SeaBC1",
+      "tune": 4,
+      "base_cpu": 1033672,
+      "copy_cpu": 1528000,
+      "file_offset": 5329056,
+      "call_cpu": 3427794,
+      "wrapper_cpu": 4616192
+    },
+    {
+      "name": "KtFULC_V_QntyR2_SeaBC1",
+      "tune": 5,
+      "base_cpu": 1033672,
+      "copy_cpu": 1528480,
+      "file_offset": 5329536,
+      "call_cpu": 3427794,
+      "wrapper_cpu": 4616192
+    }
+  ],
+  "enable_file_offset": 5308384,
+  "program_reservation": [
+    2516992,
+    2519296
+  ],
+  "calibration_reservation": [
+    5308384,
+    5330016
+  ],
+  "limitations": [
+    "No checksum or signature validation/correction",
+    "No hardware execution or timing validation",
+    "Erased bytes alone do not prove usable mapped flash",
+    "Only nine BC1 pilot quantity contributions switch; other contributions stay shared",
+    "Existing axes, dwell, timing, enable logic and other combustion modes stay shared"
+  ]
+}
