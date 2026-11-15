@@ -1,0 +1,15 @@
+Map,Group,Why it is not in the EZ LYNK config
+Fuel Pump Control - Int Gain Engine Run (factor),Other,uses an axis that was left out
+Fuel Pump Control - Proportional Gain Engine Run (factor),Other,uses an axis that was left out
+KeAICC_T_ECT_TooHighHiThrshL3,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_T_ECT_TooHighLoThrshL3,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_T_IAT_TooHighHiThrshS4,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_T_IAT_TooHighLoThrsh,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_T_IAT_TooHighLoThrshS4,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_T_IAT_TooLowLoThrsh,Boost and VGT,address could not be verified
+KeTCSC_M_WhlSlpMax,Torque Management (Driver Trans Traction),overlaps a table with stronger address evidence
+KtEXBC_Cf_TempFx,Exhaust Brake,axis X address could not be verified
+KtEXBC_K_AreaCrtnFx,Exhaust Brake,address could not be verified
+KtEXBC_p_MaxExhPresAmbRelOfst,Exhaust Brake,address could not be verified
+KtFCBR_T_TempAxis5 axis,Rail Pressure,overlaps KtFCBR_dm_FuelFlowAxis7 axis - left out
+KtSPDC_n_ExpMax_Or_RefStepDwnDR,Idle and Engine Speed Control,address could not be verified

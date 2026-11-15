@@ -1,0 +1,207 @@
+Map,Group,Why it is not in the EZ LYNK config
+KaEOSC_K_PropGainImmdt[CeTGRR_e_TransGr1],Rev and Speed Limits,overlaps a table with stronger address evidence
+KaEOSC_M_DeltaRPM_GearTorque[CeTGRR_e_TransGr2],Rev and Speed Limits,overlaps a table with stronger address evidence
+KaEOSC_M_DeltaRPM_GearTorque[CeTGRR_e_TransGrNeut],Rev and Speed Limits,address could not be verified
+KaEOSC_M_DeltaRPM_GearTorque[CeTGRR_e_TransGrPark],Rev and Speed Limits,address could not be verified
+KaEOSC_M_DeltaRPM_GearTorque[CeTGRR_e_TransGrRvrs],Rev and Speed Limits,overlaps a table with stronger address evidence
+KaEOSR_e_ImmedRespType[CeEOSR_GearSpdLimit],Rev and Speed Limits,ECU code and table-layout evidence disagree
+KaFHPC_K_PresSetPt_Ptn1_PXLM[CeCMBR_e_Normal],Rail Pressure,overlaps a table with stronger address evidence
+KaFHPC_K_PresSetPt_Ptn2_PXLM[CeCMBR_e_Normal],Rail Pressure,overlaps a table with stronger address evidence
+KaFULC_K_A1_PXLM[CeCMBR_e_Normal],Injection - Post (A1-A4 and P1),overlaps a table with stronger address evidence
+KaFULC_K_M_Ptn1_LoPXLM[CeCMBR_e_Normal],Injection - Main Quantity and Pulse Width,overlaps a table with stronger address evidence
+KaFULC_K_M_Ptn1_MidPXLM[CeCMBR_e_Normal],Injection - Main Quantity and Pulse Width,overlaps a table with stronger address evidence
+KaFULC_K_M_Ptn2_SeaPXLM[CeCMBR_e_Normal],Injection - Main Quantity and Pulse Width,overlaps a table with stronger address evidence
+KaFULC_K_R1_Ptn1_PXLM[CeCMBR_e_Normal],Injection - Pilot (R1 R2),overlaps a table with stronger address evidence
+KaFULC_K_R1_Ptn2_PXLM[CeCMBR_e_Normal],Injection - Pilot (R1 R2),overlaps a table with stronger address evidence
+KaFULC_K_SOI_M_CXXM[CeCMBR_e_Normal],Injection - Main Timing (SOI),address could not be verified
+KaFULC_b_CB_PulsEnblCombGrp1[CeFULR_e_PulsPI],Fuel Control - Other,address could not be verified
+KaFULC_b_CB_PulsEnblCombGrp2[CeFULR_e_PulsPI],Fuel Control - Other,address could not be verified
+KaOTMC_t_CombModeChillgTm[CeCMBR_e_Normal],Torque Management (Driver Trans Traction),address could not be verified
+KaSPDC_M_PwrImmedIntglLimLo[0],Idle and Engine Speed Control,ECU code and table-layout evidence disagree
+KaSPDC_n_RefStepUpCoast_TESR[0],Idle and Engine Speed Control,ECU code and table-layout evidence disagree
+KeAICC_Pct_SQA_VGT_Pstn,Boost and VGT,address could not be verified
+KeAICC_T_ECT_TooHighLoThrshL3,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_T_IAT_TooHighLoThrsh,Boost and VGT,address could not be verified
+KeAICC_T_IAT_TooHighLoThrshS4,Boost and VGT,overlaps a table with stronger address evidence
+KeAICC_e_AirSetPt_TempAC12,Boost and VGT,ECU code and table-layout evidence disagree
+KeAICC_e_AirSetPt_TempGC1,Boost and VGT,ECU code and table-layout evidence disagree
+KeAICC_e_AirSetPt_TypeAC12,Boost and VGT,ECU code and table-layout evidence disagree
+KeAICC_e_BstSetPt_TempAC12,Boost and VGT,address could not be verified
+KeAICC_e_BstSetPt_TypeAC12,Boost and VGT,address could not be verified
+KeAICC_e_TrnstnGrp_BstSetPt,Boost and VGT,address could not be verified
+KeAICC_e_TrnstnGrp_VGT_FdFwd,Boost and VGT,address could not be verified
+KeAICC_e_VGT_FdFwd_TempSC11,Boost and VGT,address could not be verified
+KeECPC_dM_FuelTempTorqMaxRate,Torque to Fuel and Smoke Limits,address could not be verified
+KeETMC_M_StartupTorqueMax,Torque Management (Driver Trans Traction),address could not be verified
+KeETQC_e_TorqToFuel_TempCC12,Torque to Fuel and Smoke Limits,address could not be verified
+KeFCBR_Pct_PWMLockoutLimit,Rail Pressure,layout evidence disagrees
+KeFCBR_b_ThermalOverloadOn,Rail Pressure,layout evidence disagrees
+KeFCBR_k_PrimePresFiltCoef,Rail Pressure,ECU code and table-layout evidence disagree
+KeFHPC_I_MU_MaxOfstCmp,Rail Pressure,address could not be verified
+KeFHPC_dV_PmpLubrLeak,Rail Pressure,address could not be verified
+KeFHPC_e_RailPresSetPt_FC21,Rail Pressure,address could not be verified
+KeFHPC_p_RailSetPointMinGrad,Rail Pressure,address could not be verified
+KeFULC_K_AirLackFiltCoeff,Fuel Control - Other,address could not be verified
+KeFULC_K_DynBoostFiltCoeff,Fuel Control - Other,address could not be verified
+KeFULC_V_CB_MinThrsh,Fuel Control - Other,address could not be verified
+KeFULC_V_ColdStartCrtnMaxIntgl,Fuel Control - Other,address could not be verified
+KeFULC_b_DynBoostOL_Enbl,Fuel Control - Other,address could not be verified
+KeFULC_e_InjPatternAmbCond,Fuel Control - Other,address could not be verified
+KeFULC_phi_MinSOI_P,Injection - Post (A1-A4 and P1),overlaps a table with stronger address evidence
+KeSPDC_Pct_PedalStlSaverEnter,Idle and Engine Speed Control,address could not be verified
+KeSPDC_Pct_PedalStlSaverExit,Idle and Engine Speed Control,address could not be verified
+KeSPDC_T_TR_Min,Idle and Engine Speed Control,address could not be verified
+KeSPDC_dn_StallSaverEnter,Idle and Engine Speed Control,address could not be verified
+KeSPDC_n_EngDsrdMax,Idle and Engine Speed Control,address could not be verified
+KeSPDC_n_EngDsrdMaxTESR,Idle and Engine Speed Control,address could not be verified
+KeSPDC_n_StallSaverAC_Off,Idle and Engine Speed Control,address could not be verified
+KeSPDC_n_TR_ResvRPM_ErrDiffHi,Idle and Engine Speed Control,address could not be verified
+KeSPDC_n_UndrBrkgThrsh,Idle and Engine Speed Control,address could not be verified
+KeSPDC_t_TrnsntCondInbtTime,Idle and Engine Speed Control,address could not be verified
+KeSPDC_t_UndrBrkgIntglFrz,Idle and Engine Speed Control,address could not be verified
+KeTCSC_M_WhlSlpMax,Torque Management (Driver Trans Traction),ECU code and table-layout evidence disagree
+KeVGTC_Pct_VGT_SetPtOvrrd,Boost and VGT,address could not be verified
+KeVOSC_v_EngCoolantHyst,Rev and Speed Limits,overlaps a table with stronger address evidence
+KfTCSC_T_TractionCoolEnbl,Torque Management (Driver Trans Traction),layout evidence disagrees
+KtAICC_K_AirSetPt_LoAC12,Boost and VGT,address could not be verified
+KtAICC_K_AirSetPt_LoCC11,Boost and VGT,address could not be verified
+KtAICC_K_AirSetPt_MidAC12,Boost and VGT,address could not be verified
+KtAICC_K_AirSetPt_SeaAC12,Boost and VGT,address could not be verified
+KtAICC_K_AirSetPt_SeaCC11,Boost and VGT,address could not be verified
+KtAICC_K_BstSetPt_LoAC12,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_K_BstSetPt_MidAC12,Boost and VGT,address could not be verified
+KtAICC_K_BstSetPt_MidCC11,Boost and VGT,address could not be verified
+KtAICC_K_BstSetPt_SC11,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_K_BstSetPt_SeaAC12,Boost and VGT,address could not be verified
+KtAICC_K_BstSetPt_SeaCC11,Boost and VGT,address could not be verified
+KtAICC_K_HPE_IntglGainAirCL,Boost and VGT,address could not be verified
+KtAICC_K_VGT_FdFwd_LoCC11,Boost and VGT,address could not be verified
+KtAICC_K_VGT_FdFwd_MidCC11,Boost and VGT,address could not be verified
+KtAICC_K_VGT_FdFwd_SeaCC11,Boost and VGT,address could not be verified
+KtAICC_Pct_HPE_ZeroTorq,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_Pct_HPE_ZeroTorqC3,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_Pct_VGT_FdFwd_LoCC11,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_FdFwd_MidBC3,Boost and VGT,conflicting evidence (contents match a different spot)
+KtAICC_Pct_VGT_FdFwd_MidCC11,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_FdFwd_SeaBC3,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_FdFwd_SeaCC11,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Max_LoBC,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Max_LoBD,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Max_MidBC,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Max_MidBD,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Max_SeaBC,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Max_SeaBD,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Max_SeaBV,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_Pct_VGT_Min_LoBC,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_LoBD,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_LoBV,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_LoBXR,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_MidBC,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_MidBD,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_MidBV,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_MidBXR,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_SeaBC,Boost and VGT,axis not monotonic - placement suspect
+KtAICC_Pct_VGT_Min_SeaBV,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_Min_SeaBXR,Boost and VGT,address could not be verified
+KtAICC_Pct_VGT_PstnSrg,Boost and VGT,address could not be verified
+KtAICC_V_CoolBypThrshNorm,Boost and VGT,address could not be verified
+KtAICC_V_FuelLoThrsh,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_cmp_AirSetPt_LoAC12,Boost and VGT,address could not be verified
+KtAICC_cmp_AirSetPt_MidAC12,Boost and VGT,address could not be verified
+KtAICC_cmp_AirSetPt_SeaAC12,Boost and VGT,address could not be verified
+KtAICC_k_ThrotFFD_CntrlFiltAir,Boost and VGT,address could not be verified
+KtAICC_p_BstSetPtMax,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_p_BstSetPt_LoAC12,Boost and VGT,address could not be verified
+KtAICC_p_BstSetPt_LoCC11,Boost and VGT,address could not be verified
+KtAICC_p_BstSetPt_MidAC12,Boost and VGT,address could not be verified
+KtAICC_p_BstSetPt_MidCC11,Boost and VGT,address could not be verified
+KtAICC_p_BstSetPt_MinLD11,Boost and VGT,overlaps a table with stronger address evidence
+KtAICC_p_BstSetPt_SeaAC12,Boost and VGT,address could not be verified
+KtAICC_p_BstSetPt_SeaCC11,Boost and VGT,address could not be verified
+KtEATC_K_SmokeLim_LoCC11,Torque to Fuel and Smoke Limits,address could not be verified
+KtEATC_K_SmokeLim_MidCC11,Torque to Fuel and Smoke Limits,address could not be verified
+KtEATC_k_AirAdaptiveFilt,Torque to Fuel and Smoke Limits,axis X address could not be verified
+KtEATC_r_SmokeLim_LoCC11,Torque to Fuel and Smoke Limits,address could not be verified
+KtEATC_r_SmokeLim_MidCC11,Torque to Fuel and Smoke Limits,address could not be verified
+KtECPC_M_BrkMax,Torque to Fuel and Smoke Limits,address could not be verified
+KtETMC_t_TSC_Max,Torque Management (Driver Trans Traction),overlaps a table with stronger address evidence
+KtETQC_m_TorqToFuel_LoBC2,Torque to Fuel and Smoke Limits,overlaps a table with stronger address evidence
+KtETQC_m_TorqToFuel_MidBC2,Torque to Fuel and Smoke Limits,overlaps a table with stronger address evidence
+KtETQC_m_TorqToFuel_MidBC3,Torque to Fuel and Smoke Limits,address could not be verified
+KtETQC_m_TorqToFuel_MidCC12,Torque to Fuel and Smoke Limits,address could not be verified
+KtETQC_m_TorqToFuel_SeaBC2,Torque to Fuel and Smoke Limits,ECU code and table-layout evidence disagree
+KtETQC_m_TorqToFuel_SeaBC3,Torque to Fuel and Smoke Limits,address could not be verified
+KtEXBC_K_VGT_DwnShiftCrtn,Exhaust Brake,ECU code and table-layout evidence disagree
+KtFHPC_K_RailPresSetPt_SeaCC11,Rail Pressure,address could not be verified
+KtFHPC_p_PresSetPt_Ptn1_LoBC2,Rail Pressure,overlaps a table with stronger address evidence
+KtFHPC_p_PresSetPt_Ptn1_MidBC2,Rail Pressure,overlaps a table with stronger address evidence
+KtFHPC_p_PresSetPt_Ptn1_MidBC3,Rail Pressure,address could not be verified
+KtFHPC_p_PresSetPt_Ptn1_SeaBC2,Rail Pressure,overlaps a table with stronger address evidence
+KtFHPC_p_PresSetPt_Ptn2_LoBC2,Rail Pressure,overlaps a table with stronger address evidence
+KtFHPC_p_PresSetPt_Ptn2_MidBC3,Rail Pressure,address could not be verified
+KtFHPC_p_RailPresSetPt_LoCC11,Rail Pressure,axis Y address could not be verified
+KtFHPC_p_RailPresSetPt_MidCC11,Rail Pressure,axis Y address could not be verified
+KtFHPC_p_RailPresSetPt_SeaCC11,Rail Pressure,axis Y address could not be verified
+KtFULC_Cnt_PostPulsDsrd,Fuel Control - Other,address could not be verified
+KtFULC_K_ET_CB_InjTblSlope,Injection - Main Quantity and Pulse Width,address could not be verified
+KtFULC_K_SOI_M_LoCXX,Injection - Main Timing (SOI),axis not monotonic - placement suspect
+KtFULC_K_SOI_M_MidCXX,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn1_LoAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1A,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1B,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1C,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1D,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1E,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1F,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1G,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1H,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MC1I,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn1_MidCC11,Injection - Main Timing (SOI),layout evidence disagrees
+KtFULC_K_SOI_M_Ptn1_SC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn1_SeaCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn2_LoAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn2_LoCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1A,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1B,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1C,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1D,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1E,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1F,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1G,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1H,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MC1I,Injection - Main Timing (SOI),axis X address could not be verified
+KtFULC_K_SOI_M_Ptn2_MidAC11,Injection - Main Timing (SOI),layout evidence disagrees
+KtFULC_K_SOI_M_Ptn2_MidCC11,Injection - Main Timing (SOI),layout evidence disagrees
+KtFULC_K_SOI_M_Ptn2_SC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_Ptn2_SeaCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_K_SOI_M_SeaCXX,Injection - Main Timing (SOI),axis not monotonic - placement suspect
+KtFULC_K_TorqEffCrtnA_C2,Fuel Control - Other,axis not monotonic - placement suspect
+KtFULC_V_CB_MaxLimSQA_Cnv,Fuel Control - Other,address could not be verified
+KtFULC_V_CB_MaxLimSQA_NoCnv,Fuel Control - Other,address could not be verified
+KtFULC_V_MainCrtnC2,Injection - Main Quantity and Pulse Width,address could not be verified
+KtFULC_V_MainCrtnLoO2,Injection - Main Quantity and Pulse Width,axis not monotonic - placement suspect
+KtFULC_V_QntyA1_LoBC1,Injection - Post (A1-A4 and P1),ECU code and table-layout evidence disagree
+KtFULC_V_QntyA1_MidBC1,Injection - Post (A1-A4 and P1),ECU code and table-layout evidence disagree
+KtFULC_V_QntyA1_SeaBC1,Injection - Post (A1-A4 and P1),ECU code and table-layout evidence disagree
+KtFULC_V_ReducedEngTorq,Fuel Control - Other,address could not be verified
+KtFULC_phi_MaxSOI_M,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Crnkg_BC1,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn1_LoAC11,Injection - Main Timing (SOI),axis Y address could not be verified
+KtFULC_phi_SOI_M_Ptn1_LoCC11,Injection - Main Timing (SOI),axis Y address could not be verified
+KtFULC_phi_SOI_M_Ptn1_MC1,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn1_MidAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn1_MidCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn1_SC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn1_SeaAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn1_SeaCC11,Injection - Main Timing (SOI),axis Y address could not be verified
+KtFULC_phi_SOI_M_Ptn2_LoAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_LoCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_MC1,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_MidAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_MidCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_SC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_SeaAC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_Ptn2_SeaCC11,Injection - Main Timing (SOI),address could not be verified
+KtFULC_phi_SOI_M_SeaCXX,Injection - Main Timing (SOI),overlaps a table with stronger address evidence
+KtFULC_t_ET_InjTblD,Injection - Main Quantity and Pulse Width,ECU code and table-layout evidence disagree
+KtOTMC_K_EngyDecrgFx,Torque Management (Driver Trans Traction),ECU code and table-layout evidence disagree

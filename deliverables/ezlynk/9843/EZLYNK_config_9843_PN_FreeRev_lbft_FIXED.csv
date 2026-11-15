@@ -1,0 +1,12 @@
+# EZ LYNK custom configuration - GM E41 L5P - HP Tuners SOTF OS 69709843 - cal E2015G5138011_P2B
+# Park/Neutral (stationary) driver demand table: GM name KtDTRC_M_EngTrqReqForRPM
+# Addresses are byte offsets in the exported SOTF .bin (ECU CPU addresses are in DESC). Data is big-endian (MSB).
+# Z = signed 16-bit raw; raw x 0.25 = Nm; Math 0.1843905 converts raw to lb-ft. Axes are 32-bit floats.
+# Layout: X axis = across the top (RPM) and Y axis = down the side (pedal % or load). Check: Park/Neutral table - the 100% pedal row (bottom) reads 1408.6 563.3 328.6 211.1 140.7 93.9 60.3 26.4 2.2 left to right (stock).
+Unique ID,Address,NAME,DESC,UNITS,Type,Elements,Size,Endian,Signed,Math,Adder,Precision,MIN,MAX,LEVEL,AXIS,CATEGORY 1,CATEGORY 2,CATEGORY 3
+FFFF,0x0000,ECM maps,,0,C,0,0,0,0,0,0,0,0,0,0,0,F1,0,0
+FFFF,0x0000,Driver Demand,,0,C,0,0,0,0,0,0,0,0,0,0,0,F2,0,0
+FFFF,0x0000,Driver Demand Axes,,0,C,0,0,0,0,0,0,0,0,0,0,0,F3,0,0
+C000,0x41A8E8,Park/Neutral Pedal Torque Request,KtDTRC_M_EngTrqReqForRPM (CPU 0x7A908). Engine torque request vs pedal and RPM used at 0 kph (Park/Neutral and launch); blends to the normal pedal maps by 15 kph (KeDTRC_v_MinARM). Raise the 2500+ RPM columns to allow free rev to the fuel cut when stationary.,lb-ft,Z,81,2,MSB,S,0.1843905372,0,1,-200,1500,1,C002:C001,F1,F2,
+C001,0x41BC84,Park/Neutral Pedal Torque - Pedal axis,KnDTRC_Pct_EngReqForPPSAxis (CPU 0x7BCA4). Accelerator pedal position breakpoints.,%,Y,9,F,MSB,U,1,0,1,0,100,1,,F1,F3,
+C002,0x41BD50,Park/Neutral Pedal Torque - RPM axis,KnDTRC_n_EngReqForRPMAxis (CPU 0x7BD70). Engine speed breakpoints.,RPM,X,9,F,MSB,U,1,0,0,0,8000,1,,F1,F3,
